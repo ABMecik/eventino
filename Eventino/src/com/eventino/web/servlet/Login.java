@@ -18,16 +18,16 @@ import javax.servlet.http.HttpSession;
 import com.eventino.web.security.Sha512;
 
 /**
- * Servlet implementation class Register
+ * Servlet implementation class Login
  */
-@WebServlet("/Register")
-public class Register extends HttpServlet {
+@WebServlet("/Login")
+public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Register() {
+    public Login() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -48,26 +48,20 @@ public class Register extends HttpServlet {
 		doGet(request, response);
 		
 		String username = request.getParameter("username");
-		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		String type = request.getParameter("account-type");
-		String phone = request.getParameter("phone");
-		
 		
 		Sha512 sha512 = new Sha512();
 		password = sha512.encrypt(password);
-		
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/event_management", "root", "mysql123");
 			Statement stmt = conn.createStatement();
 			
-			int ks = stmt.executeUpdate("INSERT INTO user VALUES(null,'" + username + "','" + password + "','" + email + "','" + phone + "',null,'" + type + "')");
-			
+
 			ResultSet rs = stmt.executeQuery("SELECT id,username,user_type FROM user WHERE username='"+ username + "' and pass='" + password + "'");
 
-			
+		
 			if (rs.next()) {
 				HttpSession session = request.getSession();
 				session.setAttribute("id", rs.getInt("id"));
@@ -101,5 +95,7 @@ public class Register extends HttpServlet {
 			reqDispatcher.forward(request, response);
 			e.printStackTrace();
 		}
+		
 	}
+
 }
