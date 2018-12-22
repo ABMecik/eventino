@@ -16,7 +16,7 @@ header.masthead {
     position: relative;
     height: 100vh;
     background-color: #343a40;
-    background: url('https://images.pexels.com/photos/167480/pexels-photo-167480.jpeg?auto=compress&cs=tinysrgb&h=650&w=940') no-repeat center center;
+    background: url("../img/background.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -206,7 +206,7 @@ hr.my-border {
 }
 
 .mybg-events {
-    background: url('https://images.pexels.com/photos/167491/pexels-photo-167491.jpeg?auto=compress&cs=tinysrgb&h=650&w=940') no-repeat center center fixed;
+    background: url("../img/background_student.jpg") no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -245,8 +245,10 @@ p.myp.text-center {
 .text-block {
     min-height: 228px;
     height: auto;
-    background: #fff;
+    color: white;
+    background: rgba(130, 84, 23,0);
     padding: 15px;
+    text-align: center;
 }
 
 h5.events-heading {
@@ -324,7 +326,7 @@ section#group {
 }
 
 .mybg-music {
-    background: url('https://images.pexels.com/photos/1267317/pexels-photo-1267317.jpeg?auto=compress&cs=tinysrgb&h=650&w=940') no-repeat center center fixed;
+    background: url("../img/career_background.jpg") no-repeat center center fixed;
     background-size: cover;
 }
 

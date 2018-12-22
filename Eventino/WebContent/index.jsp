@@ -11,6 +11,12 @@
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!------ Market Links ---------->
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
 	<!------ Include the above in your HEAD tag ---------->
 	
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -21,6 +27,7 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 	
 	<link type="text/css" rel="stylesheet"href="resources/css/style.css" />
+	<link type="text/css" rel="stylesheet"href="resources/css/pricing.css" />
 	
 	<script
     src="https://code.jquery.com/jquery-3.3.1.js"
@@ -45,10 +52,9 @@
         <div class="container slider-top-text">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h3 class="my-heading">WELCOME TO MOJO<span class="bg-main">AVE</span></h3>
-                    <p class="myp-slider text-center">Where musicians unite and become better together</p>
-                    <p class="myp text-center">SHARE YOUR MEMORIES   |   CONNECT WITH OTHERS   |   MAKE NEW FRIENDS</p>
-                    <a class="btn btn-primary btn-join" href="#">JOIN THE COMMUNITY</a>
+                    <h3 class="my-heading">EVENT<span class="bg-main">INO</span></h3>
+                    <p class="myp-slider text-center">"Success is most often achieved by those who don't know that failure is inevitable." - Coco</p>
+                    <a class="btn btn-primary btn-join" href="#">FIND AN EVENT</a>
 
                 </div>
                 <div class="col-md-12 text-center mt-5">
@@ -65,28 +71,28 @@
             <div class="row">
                 <div class="col-md-4 mb-3 wow bounceInUp" data-wow-duration="1.4s">
                     <div class="big-img">
-                        <img src="https://images.pexels.com/photos/167631/pexels-photo-167631.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="img-fluid">
+                        <img src="resources/img/preview_1.jpg" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-md-8">
                     <div class="inner-section wow fadeInUp">
-                        <h3>Follow the <span class="bg-main">Next Event</span></h3>
+                        <h3><span class="bg-main">Don't Miss an Event Near to You</span></h3>
                         <br>
-                        <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets.</p>
+                        <p class="text-justify">Here you can reach various kind of events. Conferences, Seminars, Workshops, Concerts and more. Stay tuned with us and live your life as you want. Develop your skills, go to classical music concerto or go to the concert of your favorite singer</p>
 
                         <div class="linear-grid">
                             <div class="row">
                                 <div class="col-sm-6 col-md-3 mb-2 wow bounceInUp" data-wow-duration="1.4s" >
-                                    <img src="https://images.pexels.com/photos/534031/pexels-photo-534031.jpeg?auto=compress&cs=tinysrgb&h=350" class="img-thumbnail">
+                                    <img src="resources/img/preview_2.jpg" class="img-thumbnail">
                                 </div>
                                 <div class=" col-sm-6 col-md-3 mb-2 wow bounceInUp" data-wow-duration="1.4s">
-                                    <img src="https://images.pexels.com/photos/258804/pexels-photo-258804.jpeg?auto=compress&cs=tinysrgb&h=350" class="img-thumbnail">
+                                    <img src="resources/img/preview_3.jpg" class="img-thumbnail">
                                 </div>
                                 <div class="col-sm-6 col-md-3 mb-2 wow bounceInUp" data-wow-duration="1.4s">
-                                    <img src="https://images.pexels.com/photos/285598/pexels-photo-285598.jpeg?auto=compress&cs=tinysrgb&h=350" class="img-thumbnail">
+                                    <img src="resources/img/preview_4.jpg" class="img-thumbnail">
                                 </div>
                                 <div class="col-sm-6 col-md-3 mb-2 wow bounceInUp" data-wow-duration="1.4s">
-                                    <img src="https://images.pexels.com/photos/167605/pexels-photo-167605.jpeg?auto=compress&cs=tinysrgb&h=350" class="img-thumbnail">
+                                    <img src="resources/img/preview_5.jpg" class="img-thumbnail">
                                 </div>
                             </div>
                         </div>
@@ -102,14 +108,13 @@
             
             <div class="row">
                 <div class="col-md-12 wow fadeInUp">
-                    <h3 class="title-heading text-center">MOJOAVE EVENTS</h3>
-                    <p class="myp text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <h3 class="title-heading text-center">Students, We are Here for You!</h3>
                 </div>
             </div>
             <div class="row wow slideInLeft" data-wow-duration="3s">
                 <div class="col-md-4 mb-3">
                     <div class="big-img2">
-                        <img src="https://images.pexels.com/photos/167527/pexels-photo-167527.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="img-fluid">
+                        <img src="resources/img/student_1.jpg" class="img-fluid">
                     </div>
                     
                 </div>
@@ -119,24 +124,26 @@
                             <div class="row">
                                 <div class="col-sm-6 col-md-4 mb-3">
                                    
-                                    <img src="https://images.pexels.com/photos/761963/pexels-photo-761963.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="img-fluid">
+                                    <img src="resources/img/student_2.jpg" class="img-fluid">
                                     
                                 </div>
                                 <div class="col-sm-6 col-md-8 mb-3 ">
                                     
-                                    <img src=" https://images.pexels.com/photos/164693/pexels-photo-164693.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="img-fluid">
+                                    <img src="resources/img/student_3.jpg" class="img-fluid">
                                 
                                 </div>
 
                                 <div class="col-md-8 mb-3">
                                     <div class="text-block">
-                                        <h5 class="events-heading">Lorem ipsum is simply dummy text of the printing and typesetting industry.</h5>
-                                        <p class="myp-font">contrary to popular belief, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book and more recently with desktop publishing software like Aldus PageMaker.</p>
+                                        <h5 class="events-heading">Do you want to go to an event without paying money?</h5>
+                                        <p class="myp-font">Then you are in the right place. 
+                                        After each event we store a fair amount of money and let students have the chance to use this money to buy tickets. 
+                                        We do raffles and buy tickets for some lucky students.</p>
                                     </div>
                                 </div>
                                 <div class=" col-md-4 ">
                                      
-                                    <img src="https://images.pexels.com/photos/1150837/pexels-photo-1150837.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="img-fluid">
+                                    <img src="resources/img/student_4.jpg" class="img-fluid">
                                 
                                 </div>
                             </div>
@@ -151,17 +158,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mx-auto wow fadeInUp">
-                    <h3 class="text-center font-weight-bold">JOIN MOJO<span class="bg-main">AVE</span> GROUPS</h3>
-                    <p class=" text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                    <h3 class="text-center font-weight-bold">SHARE WITH EVENT<span class="bg-main">INO</span></h3>
+                    <p class=" text-center">Share Upcoming Events with Your Friends. Don't Let Them Miss This Opportunity...</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-6 col-md-4 col-lg-3 mt-4 wow bounceInUp" data-wow-duration="1.4s">
                     <div class="card">
-                        <img class="card-img-top" src="https://images.pexels.com/photos/258732/pexels-photo-258732.jpeg?auto=compress&cs=tinysrgb&h=650&w=940">
+                        <img class="card-img-top" src="resources/img/event_1.jpg">
                         <div class="card-block">
 
-                            <h4 class="card-title text-center">CATHERINA GAIL</h4>
+                            <h4 class="card-title text-center">ANIMAL RIGHTS CONFERENCE</h4>
 
                             <div class="card-text text-center">
                                 <div class="social-icons">
@@ -172,17 +179,17 @@
                             </div>
                         </div>
                         <div class="card-footer text-center">
-                            <small>Lorem Ipsum is simply dummy text of the printing and typesetting</small>
+                            <small>Participate in this awareness-raising event.</small>
 
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 col-lg-3 mt-4 wow bounceInUp" data-wow-duration="1.4s">
                     <div class="card">
-                        <img class="card-img-top" src="https://images.pexels.com/photos/210922/pexels-photo-210922.jpeg?auto=compress&cs=tinysrgb&h=650&w=940">
+                        <img class="card-img-top" src="resources/img/event_2.jpg">
                         <div class="card-block">
 
-                            <h4 class="card-title text-center">HARVEY RUBE</h4>
+                            <h4 class="card-title text-center">BEATLES CONCERT</h4>
 
                             <div class="card-text text-center">
                                 <div class="social-icons">
@@ -193,17 +200,17 @@
                             </div>
                         </div>
                         <div class="card-footer text-center">
-                            <small>Lorem Ipsum is simply dummy text of the printing and typesetting</small>
+                            <small>Take part in the re-awakening of a legend by the new generation</small>
 
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 col-lg-3 mt-4 wow bounceInUp" data-wow-duration="1.4s">
                     <div class="card">
-                        <img class="card-img-top" src="https://images.pexels.com/photos/756242/pexels-photo-756242.jpeg?auto=compress&cs=tinysrgb&h=650&w=940">
+                        <img class="card-img-top" src="resources/img/event_3.jpg">
                         <div class="card-block">
 
-                            <h4 class="card-title text-center">JANET PRIS</h4>
+                            <h4 class="card-title text-center">ARTIFICIAL INTELLIGENCE SEMINAR</h4>
 
                             <div class="card-text text-center">
                                 <div class="social-icons">
@@ -214,17 +221,17 @@
                             </div>
                         </div>
                         <div class="card-footer text-center">
-                            <small>Lorem Ipsum is simply dummy text of the printing and typesetting</small>
+                            <small>Go deep into artificial intelligence and question mechanization. </small>
 
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 col-lg-3 mt-4 wow bounceInUp" data-wow-duration="1.4s">
                     <div class="card">
-                        <img class="card-img-top" src="https://images.pexels.com/photos/167445/pexels-photo-167445.jpeg?auto=compress&cs=tinysrgb&h=650&w=940">
+                        <img class="card-img-top" src="resources/img/guitar_master.jpg">
                         <div class="card-block">
 
-                            <h4 class="card-title text-center">KEVIN WARD</h4>
+                            <h4 class="card-title text-center">FELIPETONOS</h4>
 
                             <div class="card-text text-center">
                                 <div class="social-icons">
@@ -235,7 +242,7 @@
                             </div>
                         </div>
                         <div class="card-footer text-center">
-                            <small>Lorem Ipsum is simply dummy text of the printing and typesetting</small>
+                            <small>This music band is the jewel of this generation. Join this concert and let these young talents enchant you. </small>
 
                         </div>
                     </div>
@@ -248,195 +255,109 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 wow fadeInUp">
-                    <h3 class="title-heading text-center font-weight-bold">MOJOAVE LATEST MUSIC</h3>
-                    <p class="myp text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <h3 class="title-heading text-center font-weight-bold">BUILD YOUR CAREER!</h3>
+                    <p class="myp text-center">Build your career with workshops, conferences, seminars, etc. Attend some events that companies held. Get to know environment and people. Expand your network!</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-6 col-md-4 col-lg-2 mt-4 gal-item wow bounceInUp" data-wow-duration="1.4s">
                     <div class="music-gal item box">
                         <a href="https://images.pexels.com/photos/761963/pexels-photo-761963.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="fancybox" rel="ligthbox">
-                        <img class="img-fluid" src="https://images.pexels.com/photos/761963/pexels-photo-761963.jpeg?auto=compress&cs=tinysrgb&h=650&w=940">
+                        <img class="img-fluid" src="resources/img/career_1.jpg">
                         </a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 col-lg-2 mt-4 gal-item wow bounceInUp" data-wow-duration="1.4s">
                     <div class="music-gal item box">
                         <a href="https://images.pexels.com/photos/838696/pexels-photo-838696.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="fancybox" rel="ligthbox">
-                        <img class="img-fluid" src="https://images.pexels.com/photos/838696/pexels-photo-838696.jpeg?auto=compress&cs=tinysrgb&h=650&w=940">
+                        <img class="img-fluid" src="resources/img/career_2.jpg">
                         </a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 col-lg-2 mt-4 gal-item wow bounceInUp" data-wow-duration="1.4s">
                     <div class="music-gal item box">
                         <a href="https://images.pexels.com/photos/1047930/pexels-photo-1047930.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="fancybox" rel="ligthbox">
-                        <img class="img-fluid" src="https://images.pexels.com/photos/1047930/pexels-photo-1047930.jpeg?auto=compress&cs=tinysrgb&h=650&w=940">
+                        <img class="img-fluid" src="resources/img/career_3.jpg">
                         </a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 col-lg-2 mt-4 gal-item wow bounceInUp" data-wow-duration="1.4s">
                     <div class="music-gal item box">
                         <a href="https://images.pexels.com/photos/164693/pexels-photo-164693.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="fancybox" rel="ligthbox">
-                        <img class="img-fluid" src="https://images.pexels.com/photos/164693/pexels-photo-164693.jpeg?auto=compress&cs=tinysrgb&h=650&w=940">
+                        <img class="img-fluid" src="resources/img/career_4.jpg">
                         </a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 col-lg-2 mt-4 gal-item wow bounceInUp" data-wow-duration="1.4s">
                     <div class="music-gal item box">
                         <a href="https://images.pexels.com/photos/876713/pexels-photo-876713.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="fancybox" rel="ligthbox">
-                        <img class="img-fluid" src="https://images.pexels.com/photos/876713/pexels-photo-876713.jpeg?auto=compress&cs=tinysrgb&h=650&w=940">
+                        <img class="img-fluid" src="resources/img/career_5.jpg">
                         </a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 col-lg-2 mt-4 gal-item wow bounceInUp" data-wow-duration="1.4s">
                     <div class="music-gal item box">
                         <a href="https://images.pexels.com/photos/258732/pexels-photo-258732.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="fancybox" rel="ligthbox">
-                        <img class="img-fluid" src="https://images.pexels.com/photos/258732/pexels-photo-258732.jpeg?auto=compress&cs=tinysrgb&h=650&w=940">
+                        <img class="img-fluid" src="resources/img/career_6.jpg">
                         </a>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4 col-lg-2 mt-4 gal-item wow bounceInUp" data-wow-duration="1.4s">
-                    <div class="music-gal item box">
-                        <a href="https://images.pexels.com/photos/210887/pexels-photo-210887.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="fancybox" rel="ligthbox">
-                        <img class="img-fluid" src="https://images.pexels.com/photos/210887/pexels-photo-210887.jpeg?auto=compress&cs=tinysrgb&h=650&w=940">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-2 mt-4 gal-item wow bounceInUp" data-wow-duration="1.4s">
-                    <div class="music-gal item box">
-                        <a href="https://images.pexels.com/photos/210922/pexels-photo-210922.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="fancybox" rel="ligthbox">
-                        <img class="img-fluid" src="https://images.pexels.com/photos/210922/pexels-photo-210922.jpeg?auto=compress&cs=tinysrgb&h=650&w=940">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-2 mt-4 gal-item wow bounceInUp" data-wow-duration="1.4s">
-                    <div class="music-gal item box">
-                        <a href="https://images.pexels.com/photos/756242/pexels-photo-756242.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="fancybox" rel="ligthbox">
-                        <img class="img-fluid" src="https://images.pexels.com/photos/756242/pexels-photo-756242.jpeg?auto=compress&cs=tinysrgb&h=650&w=940">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-2 mt-4 gal-item wow bounceInUp" data-wow-duration="1.4s">
-                    <div class="music-gal item box">
-                        <a href="https://images.pexels.com/photos/167589/pexels-photo-167589.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="fancybox" rel="ligthbox">
-                        <img class="img-fluid" src="https://images.pexels.com/photos/167589/pexels-photo-167589.jpeg?auto=compress&cs=tinysrgb&h=650&w=940">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-2 mt-4 gal-item wow bounceInUp" data-wow-duration="1.4s">
-                    <div class="music-gal item box">
-                        <a href="https://images.pexels.com/photos/167626/pexels-photo-167626.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="fancybox" rel="ligthbox">
-                        <img class="img-fluid" src="https://images.pexels.com/photos/167626/pexels-photo-167626.jpeg?auto=compress&cs=tinysrgb&h=650&w=940">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-2 mt-4 gal-item wow bounceInUp" data-wow-duration="1.4s">
-                    <div class="music-gal item box">
-                        <a href="https://images.pexels.com/photos/167527/pexels-photo-167527.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="fancybox" rel="ligthbox">
-                        <img class="img-fluid" src="https://images.pexels.com/photos/167527/pexels-photo-167527.jpeg?auto=compress&cs=tinysrgb&h=650&w=940">
-                        </a>
-                    </div>
-                </div>
+      
 
             </div>
         </div>
     </section>
 
     <section class="testimonials bg-light" id="marketplace">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 mx-auto wow fadeInUp">
-                    <h3 class="text-center font-weight-bold">MOJO<span class="bg-main">AVE</span> MARKET PLACE</h3>
-                    <p class=" text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-                </div>
+	<div class="container mb-5 mt-5">
+    <div class="pricing card-deck flex-column flex-md-row mb-3">
+        <div class="card card-pricing text-center px-3 mb-4">
+            <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">Starter</span>
+            <div class="bg-transparent card-header pt-4 border-0">
+                <h1 class="h1 font-weight-normal text-primary text-center mb-0" data-pricing-value="15">$<span class="price">10</span><span class="h6 text-muted ml-2"></span></h1>
             </div>
-            <div class="row">
-                <div class="col-sm-6 col-md-4 col-lg-4 mt-4 wow bounceInUp" data-wow-duration="1.4s">
-                    <div class="card">
-                        <img class="card-img-top h-262" src="https://images.pexels.com/photos/449627/pexels-photo-449627.jpeg?auto=compress&cs=tinysrgb&h=650&w=940">
-                        <div class="card-block">
-
-                            <h4 class="card-title">Lorem Ipsum Dolor Site Amet</h4>
-
-                            <div class="card-text">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <small>$ 170</small>
-                            <a href="#" class="pull-right">More Info</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-4 mt-4 wow bounceInUp" data-wow-duration="1.4s">
-                    <div class="card">
-                        <img class="card-img-top h-262" src="https://images.pexels.com/photos/56005/fiji-beach-sand-palm-trees-56005.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-                        <div class="card-block">
-
-                            <h4 class="card-title">Lorem Ipsum Dolor Site Amet</h4>
-
-                            <div class="card-text">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <small>$ 170</small>
-                            <a href="#" class="pull-right">More Info</a>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-4 col-lg-4 mt-4 wow bounceInUp" data-wow-duration="1.4s">
-                    <div class="card">
-                        <img class="card-img-top h-262" src="https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?auto=compress&cs=tinysrgb&h=650&w=940">
-                        <div class="card-block">
-
-                            <h4 class="card-title ">Lorem Ipsum Dolor Site Amet</h4>
-
-                            <div class="card-text ">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <small>$ 170</small>
-                            <a href="#" class="pull-right">More Info</a>
-
-                        </div>
-                    </div>
-                </div>
+            <div class="card-body pt-0">
+                <ul class="list-unstyled mb-4">
+                    <li>Publish 1 Event</li>
+					<li>Publish an Event up to 1 month</li>
+					<li>No Support</li>
+                </ul>
+                <button type="button" class="btn btn-outline-secondary mb-3">Order now</button>
             </div>
         </div>
-    </section>
-
-    <section class="testimonials text-center ">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 mx-auto wow fadeInUp">
-                    <h3 class="text-center font-weight-bold">MOJO<span class="bg-main">AVE</span> FEATURED ARTIST</h3>
-                    <p class=" text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-                </div>
+        <div class="card card-pricing popular shadow text-center px-3 mb-4">
+            <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">Professional</span>
+            <div class="bg-transparent card-header pt-4 border-0">
+                <h1 class="h1 font-weight-normal text-primary text-center mb-0" data-pricing-value="30">$<span class="price">18</span><span class="h6 text-muted ml-2"></span></h1>
             </div>
-            <div class="row">
-                <div class="col-sm-6 col-md-4 col-lg-6 mt-4 wow bounceInUp" data-wow-duration="1.4s">
-                    <div class="big-img-3">
-                        <img src="https://images.pexels.com/photos/167480/pexels-photo-167480.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-6 mt-4">
-                    <div class="my-right-text wow fadeInUp">
-
-                        <p class="text-justify font-italic">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets. remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown.</p>
-
-                        <a href="#" class="link-color">Michael U</a>
-                        <p class="text-muted">Lorem Ipsum Dolor Sit Amet</p>
-                    </div>
-                </div>
-
+            <div class="card-body pt-0">
+                <ul class="list-unstyled mb-4">
+                    <li>Publish 2 Events</li>
+					<li>Publish Events up to 3 months</li>
+					<li>Limited Support</li>
+                </ul>
+                <a href="https://www.totoprayogo.com" target="_blank" class="btn btn-primary mb-3">Order Now</a>
             </div>
         </div>
+        <div class="card card-pricing text-center px-3 mb-4">
+            <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">Business</span>
+            <div class="bg-transparent card-header pt-4 border-0">
+                <h1 class="h1 font-weight-normal text-primary text-center mb-0" data-pricing-value="45">$<span class="price">35</span><span class="h6 text-muted ml-2"></span></h1>
+            </div>
+            <div class="card-body pt-0">
+                <ul class="list-unstyled mb-4">
+                    <li>Publish 4 Events</li>
+					<li>Publish Events up to 6 months</li>
+					<li>UnlimitedSupport</li>
+                </ul>
+                <button type="button" class="btn btn-outline-secondary mb-3">Order now</button>
+            </div>
+        </div>
+    </div>
+</div>
     </section>
-	
+
+    
 	<div id="footer"></div>
 
 
