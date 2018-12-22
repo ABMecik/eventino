@@ -3,7 +3,7 @@ Event management website
 
 
 Creaters:
-Artun Burak Meçik
-Volkan Özer
-Batuhan Bilgin
+Artun Burak Meçik,
+Volkan Özer,
+Batuhan Bilgin,
 Ersin Güven
