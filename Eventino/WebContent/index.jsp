@@ -21,64 +21,24 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 	
 	<link type="text/css" rel="stylesheet"href="resources/css/index.css" />
+	
+	<script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+	</script>
+	<script> 
+	$(function(){
+	  $("#header").load("header.jsp"); 
+	  $("#footer").load("footer.jsp");
+	});
+	</script>
 
   </head>
 
 <body>
  
-   <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <h3 class="my-heading ">MOJO<span class="bg-main">AVE</span></h3>
-            </a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="fa fa-bars mfa-white"></span>
-            </button>
-
-            <div id="main">
-                <a href="javascript:void(0)" class="openNav"><span class="fa fa-bars" onclick="openNav()"></span></a>
-            </div>
-
-         
-           
-        <div id="mySidenav" class="sidenav">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-          <ul class="mob-ul">
-             <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-             <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-             
-             <li class="nav-item"><a class="nav-link" href="#">Events</a></li>
-             <li class="nav-item"><a class="nav-link" href="#">Groups</a></li>
-             <li class="nav-item"><a class="nav-link" href="#">Music</a></li>
-             <li class="nav-item"><a class="nav-link" href="#">Marketplace</a></li>
-             <li class="nav-item"><a class="nav-link" href="#">Featured Artists</a></li>
-             <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
-             <li class="nav-item"><a class="nav-link" href="#">Register</a></li>
-             
-             
-          </ul>
-        </div>
-
-
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <form class="form-inline my-2 my-lg-0 col-md-7">
-                    <input class="myform-control mr-sm-2" type="search" placeholder="find peoples, instruments, bands and more..." aria-label="Search">
-                    <button class="btn btn-light"><i class="fa fa-search"></i></button>
-                </form>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-link">
-                        <a class="btn btn-primary btn-block btn-login" href="#">Login</a>
-                    </li>
-                    <li class="nav-link">
-                        <a class="btn btn-primary btn-block btn-register" href="#">Register</a>
-                    </li>
-
-                </ul>
-            </div>
-
-        </div>
-    </nav>
-
+<div id="header"></div>
     
     <header class="masthead text-white ">
         <div class="overlay"></div>
@@ -476,54 +436,10 @@
             </div>
         </div>
     </section>
+	
+	<div id="footer"></div>
 
-   
-    <footer class="footer bg-dark">
-        <div class="container">
-            <div class="row">
-               
-                <div class="col-lg-6 text-center text-lg-left my-auto  wow zoomIn">
-                    <ul class="list-inline mb-2">
-                        <li class="list-inline-item">
-                            <a href="#">About</a>
-                        </li>
-                        <li class="list-inline-item">⋅</li>
-                        <li class="list-inline-item">
-                            <a href="#">Contact</a>
-                        </li>
-                        <li class="list-inline-item">⋅</li>
-                        <li class="list-inline-item">
-                            <a href="#">Terms of Use</a>
-                        </li>
-                        <li class="list-inline-item">⋅</li>
-                        <li class="list-inline-item">
-                            <a href="#">Privacy Policy</a>
-                        </li>
-                    </ul>
-                    <p class="text-muted small mb-4 mb-lg-0">© Mojoave 2018. All Rights Reserved.</p>
-                </div>
-                <div class="col-lg-6 text-center text-lg-right my-auto  wow zoomIn">
-                    <ul class="list-inline mb-0">
-                        <li class="list-inline-item mr-3">
-                            <a href="#">
-                                <i class="fa fa-facebook fa-2x fa-fw"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item mr-3">
-                            <a href="#">
-                                <i class="fa fa-twitter fa-2x fa-fw"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fa fa-instagram fa-2x fa-fw"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
      <script>
               new WOW().init();
