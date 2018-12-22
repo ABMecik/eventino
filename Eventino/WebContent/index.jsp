@@ -20,7 +20,7 @@
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 	
-	<link type="text/css" rel="stylesheet"href="resources/css/index.css" />
+	<link type="text/css" rel="stylesheet"href="resources/css/style.css" />
 	
 	<script
     src="https://code.jquery.com/jquery-3.3.1.js"
