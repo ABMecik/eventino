@@ -42,10 +42,10 @@
                 </form>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-link">
-                        <a class="btn btn-primary btn-block btn-login" href="#">Login</a>
+                        <a class="btn btn-primary btn-block btn-login" href="login.jsp">Login</a>
                     </li>
                     <li class="nav-link">
-                        <a class="btn btn-primary btn-block btn-register" href="#">Register</a>
+                        <a class="btn btn-primary btn-block btn-register" href="register.jsp">Register</a>
                     </li>
                     <li class="nav-link">
                         <button type = "submit" class = "btn btn-primary btn-block btn-login">Submit Button</button>
