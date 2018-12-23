@@ -74,6 +74,28 @@ public class Register extends HttpServlet {
 				session.setAttribute("id", rs.getInt("id"));
 				session.setAttribute("username", rs.getString("username"));
 				session.setAttribute("user-type", rs.getString("user_type"));
+				
+				String aTp = rs.getString("user_type");
+				int userID = rs.getInt("id");
+				rs.close();
+				
+				if(aTp.equals("Participant")) {
+					System.out.println("ok");
+					ResultSet rs1 = stmt.executeQuery("SELECT participant_type FROM participant WHERE participant_id='"+ userID + "'");
+					if(rs1.next()) {
+						session.setAttribute("participant-type", rs1.getString("participant_type"));
+					}
+					session.setAttribute("advertiser-type", "");
+					rs1.close();
+				}
+				else if(aTp.equals("Advertiser")) {
+					ResultSet rs1 = stmt.executeQuery("SELECT advertiser_type FROM advertiser WHERE participant_id='"+ userID + "'");
+					if(rs1.next()) {
+						session.setAttribute("advertiser-type", rs1.getString("advertiser_type"));
+					}
+					session.setAttribute("participant-type", "");
+					rs1.close();
+				}
 
 				
 				RequestDispatcher reqDispatcher = getServletConfig().getServletContext()

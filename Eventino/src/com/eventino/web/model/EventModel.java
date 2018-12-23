@@ -2,7 +2,7 @@ package com.eventino.web.model;
 
 import java.util.Date;
 
-public class Event {
+public class EventModel {
 
 	private int event_id;
 	private int advertiser;
@@ -18,10 +18,10 @@ public class Event {
 	private String event_photo;
 	
 	
-	public Event() {
+	public EventModel() {
 		super();
 	}
-	public Event(int event_id, int advertiser, int system_account_transaction_id, int account_transaction_id,
+	public EventModel(int event_id, int advertiser, int system_account_transaction_id, int account_transaction_id,
 			String event_title) {
 		super();
 		this.event_id = event_id;
@@ -30,7 +30,7 @@ public class Event {
 		this.account_transaction_id = account_transaction_id;
 		this.event_title = event_title;
 	}
-	public Event(int advertiser, String event_address, String event_title, String event_desc, Date event_expire_date,
+	public EventModel(int advertiser, String event_address, String event_title, String event_desc, Date event_expire_date,
 			Date event_publish_date, Date event_time, String event_type, String event_photo) {
 		super();
 		this.advertiser = advertiser;
@@ -43,7 +43,7 @@ public class Event {
 		this.event_type = event_type;
 		this.event_photo = event_photo;
 	}
-	public Event(int event_id, int advertiser, String event_address, String event_title, String event_desc,
+	public EventModel(int event_id, int advertiser, String event_address, String event_title, String event_desc,
 			Date event_expire_date, Date event_publish_date, Date event_time, String event_type, String event_photo) {
 		super();
 		this.event_id = event_id;
@@ -57,7 +57,7 @@ public class Event {
 		this.event_type = event_type;
 		this.event_photo = event_photo;
 	}
-	public Event(int event_id, int advertiser, int system_account_transaction_id, int account_transaction_id,
+	public EventModel(int event_id, int advertiser, int system_account_transaction_id, int account_transaction_id,
 			String event_address, String event_title, String event_desc, Date event_expire_date,
 			Date event_publish_date, Date event_time, String event_type, String event_photo) {
 		super();
@@ -74,7 +74,7 @@ public class Event {
 		this.event_type = event_type;
 		this.event_photo = event_photo;
 	}
-	public Event(int advertiser, int system_account_transaction_id, int account_transaction_id, String event_address,
+	public EventModel(int advertiser, int system_account_transaction_id, int account_transaction_id, String event_address,
 			String event_title, String event_desc, Date event_expire_date, Date event_publish_date, Date event_time,
 			String event_type, String event_photo) {
 		super();

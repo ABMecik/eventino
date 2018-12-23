@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
-<%@page import="com.eventino.web.model.Event"%>
+<%@page import="com.eventino.web.model.EventModel"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -49,13 +49,14 @@
 <script src="https://code.jquery.com/jquery-3.3.1.js"
 	integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
 	crossorigin="anonymous">
-	</script>
-<script> 
-	$(function(){
-	  $("#header").load("header.jsp"); 
-	  $("#footer").load("footer.jsp");
+	
+</script>
+<script>
+	$(function() {
+		$("#header").load("header.jsp");
+		$("#footer").load("footer.jsp");
 	});
-	</script>
+</script>
 
 </head>
 <body>
@@ -78,12 +79,11 @@
 
 
 
-				<% 
-	    	List<Event> eventList = (ArrayList<Event>)request.getAttribute("events");
- 			if(!eventList.isEmpty()){
-		    	for(Event event : eventList)
-		    {
-		    	%>
+				<%
+					List<EventModel> eventList = (ArrayList<EventModel>) request.getAttribute("events");
+					if (!eventList.isEmpty()) {
+						for (EventModel event : eventList) {
+				%>
 				}
 
 
@@ -95,15 +95,32 @@
 						</div>
 						<div class="caption card-body">
 							<h4 class="group card-title inner list-group-item-heading">
-								<%out.print(event.getEvent_title());%>
+								<%
+									out.print(event.getEvent_title());
+								%>
 							</h4>
-							<p class="group inner list-group-item-text"><%out.print(event.getEvent_desc());%></p>
+							<p class="group inner list-group-item-text">
+								<%
+									out.print(event.getEvent_desc());
+								%>
+							</p>
 							<div class="row">
 								<div class="col-xs-12 col-md-6">
-									<p class="lead"><%out.print(event.getEvent_time());%></p>
+									<p class="lead">
+										<%
+											out.print(event.getEvent_time());
+										%>
+									</p>
 								</div>
 								<div class="col-xs-12 col-md-6">
-									<a class="btn btn-success">Detail</a>
+									<form class="form-inline" action="Event" method="POST">
+									
+										<div class="form-group">
+											<input type="hidden" name="eventID" value="<%out.print(event.getEvent_id());%>">
+										</div>
+
+										<button type="submit" class="btn-join" value="Event">Detail</button>
+									</form>
 								</div>
 							</div>
 						</div>
@@ -111,9 +128,9 @@
 				</div>
 
 				<%
- 							}
-	                	}
-	                %>
+					}
+					}
+				%>
 			</div>
 		</div>
 	</div>
@@ -121,76 +138,75 @@
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 	<script>
-              new WOW().init();
-              </script>
+		new WOW().init();
+	</script>
 	<script>
-        $(window).scroll( function(){
+		$(window).scroll(function() {
 
- 
-          var topWindow = $(window).scrollTop();
-          var topWindow = topWindow * 1.5;
-          var windowHeight = $(window).height();
-          var position = topWindow / windowHeight;
-          position = 1 - position;
-        
-          $('#bottom').css('opacity', position);
-        
-        });
+			var topWindow = $(window).scrollTop();
+			var topWindow = topWindow * 1.5;
+			var windowHeight = $(window).height();
+			var position = topWindow / windowHeight;
+			position = 1 - position;
 
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.display = "0";
-            document.body.style.backgroundColor = "white";
-        }
+			$('#bottom').css('opacity', position);
 
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginRight= "0";
-            document.body.style.backgroundColor = "white";
-        }
+		});
 
- 
-     $(window).on("scroll", function() {
-            if ($(this).scrollTop() > 10) {
-                $("nav.navbar").addClass("mybg-dark");
-                $("nav.navbar").addClass("navbar-shrink");
-              
+		function openNav() {
+			document.getElementById("mySidenav").style.width = "250px";
+			document.getElementById("main").style.display = "0";
+			document.body.style.backgroundColor = "white";
+		}
 
-            } else {
-                $("nav.navbar").removeClass("mybg-dark");
-                $("nav.navbar").removeClass("navbar-shrink");
-               
-            }
-            
-      
+		function closeNav() {
+			document.getElementById("mySidenav").style.width = "0";
+			document.getElementById("main").style.marginRight = "0";
+			document.body.style.backgroundColor = "white";
+		}
 
-        });
-        
-        $(function() {
-  $('#bottom').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top
-        }, 500);
-        return false;
-      }
-    }
-  });
-});
+		$(window).on("scroll", function() {
+			if ($(this).scrollTop() > 10) {
+				$("nav.navbar").addClass("mybg-dark");
+				$("nav.navbar").addClass("navbar-shrink");
 
+			} else {
+				$("nav.navbar").removeClass("mybg-dark");
+				$("nav.navbar").removeClass("navbar-shrink");
 
-</script>
+			}
+
+		});
+
+		$(function() {
+			$('#bottom')
+					.click(
+							function() {
+								if (location.pathname.replace(/^\//, '') == this.pathname
+										.replace(/^\//, '')
+										&& location.hostname == this.hostname) {
+									var target = $(this.hash);
+									target = target.length ? target
+											: $('[name=' + this.hash.slice(1)
+													+ ']');
+									if (target.length) {
+										$('html,body').animate({
+											scrollTop : target.offset().top
+										}, 500);
+										return false;
+									}
+								}
+							});
+		});
+	</script>
 	<script>
-    $(document).ready(function(){
-      $(".fancybox").fancybox({
-            openEffect: "none",
-            closeEffect: "none"
-        });
-    });
-</script>
+		$(document).ready(function() {
+			$(".fancybox").fancybox({
+				openEffect : "none",
+				closeEffect : "none"
+			});
+		});
+	</script>
 
 </body>
 </html>

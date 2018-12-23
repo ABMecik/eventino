@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.eventino.db.connection.DBConnection;
-import com.eventino.web.model.Event;
+import com.eventino.web.model.EventModel;
 
 /**
  * Servlet implementation class Events
@@ -53,14 +53,14 @@ public class Events extends HttpServlet {
 
 
 				
-			List<Event> events = new ArrayList<Event>();
+			List<EventModel> events = new ArrayList<EventModel>();
 			
 			//ResultSet studentTicket = stmt.executeQuery("SELECT ticket.price FROM ticket,event WHERE event.event_id = " + rs.getInt("event_id") + " AND event.event_id = ticket.event_id AND ticket.ticket_type = 'Student' ORDER BY ticket.ticket_id LIMIT 1");
 			//ResultSet nonStudentTicket = stmt.executeQuery("SELECT ticket.price FROM ticket,event WHERE event.event_id = " + rs.getInt("event_id") + " AND event.event_id = ticket.event_id AND ticket.ticket_type = 'Non-Student' ORDER BY ticket.ticket_id LIMIT 1");
 			
 			
 			while(rs.next()){
-				Event event = new Event(rs.getInt("event_id"),
+				EventModel event = new EventModel(rs.getInt("event_id"),
 						rs.getInt("advertiser_id"),
 						rs.getInt("system_account_transaction_id"),
 						rs.getInt("account_transaction_id"),
