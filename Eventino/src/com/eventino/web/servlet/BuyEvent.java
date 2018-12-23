@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.eventino.db.connection.DBConnection;
+
 /**
  * Servlet implementation class BuyEvent
  */
@@ -52,7 +54,7 @@ public class BuyEvent extends HttpServlet {
 			HttpSession session = request.getSession();
 			
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/event_management", "root", "mysql123");
+			Connection conn = DBConnection.createConnection();
 			Statement stmt = conn.createStatement();
 			
 			int usersID = (int) session.getAttribute("id");

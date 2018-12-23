@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.eventino.db.connection.DBConnection;
 import com.eventino.web.model.Event;
 
 /**
@@ -44,7 +45,7 @@ public class Events extends HttpServlet {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/event_management", "root", "mysql123");
+			Connection conn = DBConnection.createConnection();
 			Statement stmt = conn.createStatement();
 			
 

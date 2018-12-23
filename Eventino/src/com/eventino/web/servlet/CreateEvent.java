@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.eventino.db.connection.DBConnection;
 import com.mysql.jdbc.PreparedStatement;
 
 /**
@@ -65,8 +66,7 @@ public class CreateEvent extends HttpServlet {
 			HttpSession session = request.getSession();
 
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/event_management", "root",
-					"mysql123");
+			Connection conn = DBConnection.createConnection();
 
 			String sql = "UPDATE event SET event_address=?, event_title=?, event_desc=?, event_expire_date=?, event_publish_date=?, event_time=?, event_type=?, event_photo=? WHERE event.event_id=?";
 
