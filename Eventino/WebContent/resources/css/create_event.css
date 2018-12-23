@@ -71,7 +71,7 @@ form > div.switch > label {
   padding: 16px 20px 13px;
 }
 
-.col-2, .col-3, .col-4 {
+.col-2, .col-3, .col-4, .col-5 {
   border-bottom: 1px solid #e4e4e4;
 }
 
@@ -83,7 +83,7 @@ label > input {
   display: inline-block;
   position: relative;
   width: 100%;
-  height: 27px;
+  height: 30px;
   line-height: 27px;
   margin: 5px -5px 0;
   padding: 7px 5px 3px;
@@ -175,6 +175,7 @@ button.submitbtn:active {
   .col-2 { width: 50% }
   .col-3 { width: 33.3333333333% }
   .col-4 { width: 33.3333333333% }
+  .col-5 { width: 33.3333333333% }
 
   .col-submit button { width: 30%; margin: 0 auto; }
 }
