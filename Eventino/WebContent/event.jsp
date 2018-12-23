@@ -64,7 +64,7 @@
 						<div class="preview-pic tab-content">
 							<div class="tab-pane active" id="pic-1">
 								<img
-									src="https://www.kaft.com/static/images/cache/313/tisort_ozgurruh_1990_313_313.jpg?cacheID=1429301256000" />
+									src="${event.getEvent_photo()}" />
 							</div>
 						</div>
 
@@ -102,82 +102,89 @@
 							<hr>
 							<h2>
 								<font color="purple"> <%
-                        if (session.getAttribute("username") == null) {
-                        	%> ${ticketNSP}$ <%
-                        }
-                        else{
-                        	if (session.getAttribute("user-type").equals("Participant")) {
-                        		
-		                        if (session.getAttribute("participant-type").equals("Student")){
-		                        	%> ${ticketSP}$ <%
-		                        }else{
-		                        	%> ${ticketNSP}$ <%
-		                        }
-		                        
-                        	}else{
-                        		%> Student : ${ticketSP}$ Normal :
-									${ticketNSP}$ <%
-                        	}
-                        }
-                        %>
+ 	if (session.getAttribute("username") == null) {
+ %> ${ticketNSP}$ <%
+ 	} else {
+ 		if (session.getAttribute("user-type").equals("Participant")) {
+
+ 			if (session.getAttribute("participant-type").equals("Student")) {
+ %> ${ticketSP}$ <%
+ 	} else {
+ %> ${ticketNSP}$ <%
+ 	}
+
+ 		} else {
+ %> Student : ${ticketSP}$ Normal : ${ticketNSP}$ <%
+ 	}
+ 	}
+ %>
 							</h2>
 							</font>
 						</div>
+						<form role="form" name="buyTicketForm" id="ticket-form"
+							method="POST" action="BuyTicket">
+							<fieldset>
 
-						<%
-                            if (session.getAttribute("username") == null) {}
-                            else{
-                            	if (session.getAttribute("user-type").equals("Participant")) {
-                            		if (session.getAttribute("participant-type").equals("Student")){
-                            			
-                            		
-                            %>
-						<div class="panel panel-default text-center">
-							<h3>
-								<div class="panel-title">
-									<span class="glyphicon glyphicon-scissors"></span> ticket type
+								<%
+									if (session.getAttribute("username") == null) {
+									} else {
+										if (session.getAttribute("user-type").equals("Participant")) {
+											if (session.getAttribute("participant-type").equals("Student")) {
+								%>
+								<div class="panel panel-default text-center">
+									<h3>
+										<div class="panel-title">
+											<span class="glyphicon glyphicon-scissors"></span> ticket
+											type
+										</div>
+									</h3>
+									<hr>
+									<div class="form-group">
+										<span class="input-group-addon"> <select id="ticket-type"
+											name='ticket-type' class="form-control" name="size">
+												<option>Student</option>
+												<option>Free Request</option>
+
+										</select>
+										</span>
+									</div>
+									<br>
 								</div>
-							</h3>
-							<hr>
-							</h3>
-							<span class="input-group-addon"><select id="beden"
-								name='beden' class="form-control" name="size">
-									<option>Student</option>
-									<option>Free Request</option>
 
-							</select></span> <br>
-						</div>
-						</h3>
+								<%
+									} else {
+								%>
+								<div class="panel panel-default text-center">
+									<h3>
+										<div class="panel-title">
+											<span class="glyphicon glyphicon-scissors"></span> ticket
+											type
+										</div>
+									</h3>
+									<hr>
+									<div class="form-group">
+										<span class="input-group-addon"> <select id="ticket-type"
+											name='ticket-type' class="form-control" name="size">
+												<option>Normal</option>
 
-						<%
-                            		}else{
-                            			%>
-						<div class="panel panel-default text-center">
-							<h3>
-								<div class="panel-title">
-									<span class="glyphicon glyphicon-scissors"></span> ticket type
+										</select>
+										</span>
+									</div>
+									<br>
 								</div>
-							</h3>
-							<hr>
-							</h3>
-							<span class="input-group-addon"><select id="beden"
-								name='beden' class="form-control" name="size">
-									<option>Normal</option>
 
-							</select></span> <br>
-						</div>
-						</h3>
-						<%
-                            		}
-                            	}
-                            }
-                    %>
+								<%
+									}
+										}
+									}
+								%>
 
-						<div class="text-center">
-							<button class="add-to-cart btn btn-default" type="button">
-								<span class="glyphicon glyphicon-gift"></span> Buy
-							</button>
-						</div>
+								<div class="text-center">
+									<input type="submit" class="btn btn-lg btn-success btn-block"
+										value="Buy">
+								</div>
+							</fieldset>
+						</form>
 					</div>
 				</div>
 			</div>

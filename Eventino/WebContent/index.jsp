@@ -53,7 +53,7 @@
                 <div class="col-md-12 text-center">
                     <h3 class="my-heading">EVENT<span class="bg-main">INO</span></h3>
                     <p class="myp-slider text-center">"Success is most often achieved by those who don't know that failure is inevitable." - Coco</p>
-                    <a class="btn btn-primary btn-join" href="create_event.jsp">FIND AN EVENT</a>
+                    <a class="btn btn-primary btn-join" href="/Eventino/Events">FIND AN EVENT</a>
 
                 </div>
                 <div class="col-md-12 text-center mt-5">
