@@ -1,3 +1,4 @@
+CREATE DATABASE IF NOT EXISTS event_management; 
 USE event_management;
 
 CREATE TABLE give_feedback(
