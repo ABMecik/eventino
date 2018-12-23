@@ -20,13 +20,7 @@
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
           <ul class="mob-ul">
              <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-             <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-             
              <li class="nav-item"><a class="nav-link" href="#">Events</a></li>
-             <li class="nav-item"><a class="nav-link" href="#">Groups</a></li>
-             <li class="nav-item"><a class="nav-link" href="#">Music</a></li>
-             <li class="nav-item"><a class="nav-link" href="#">Marketplace</a></li>
-             <li class="nav-item"><a class="nav-link" href="#">Featured Artists</a></li>
              <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
              <li class="nav-item"><a class="nav-link" href="#">Register</a></li>
              
@@ -36,10 +30,6 @@
 
 
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <form class="form-inline my-2 my-lg-0 col-md-7">
-                    <input class="myform-control mr-sm-2" type="search" placeholder="find peoples, instruments, bands and more..." aria-label="Search">
-                    <button class="btn btn-light"><i class="fa fa-search"></i></button>
-                </form>
                 <ul class="navbar-nav ml-auto">
                 <%
 					response.setHeader("Cache-Control", "no-cach,no-store,must-revalidate");
@@ -68,3 +58,5 @@
 
         </div>
     </nav>
+    
+    
