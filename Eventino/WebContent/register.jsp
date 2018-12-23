@@ -58,8 +58,7 @@
 <body>
 	<div id="header"></div>
 
-
-	<div class="container">
+	<div class="form-container">
 
 		<div class="row">
 			<div
@@ -123,13 +122,17 @@
 							this site, including our Cookie Use.
 						</div>
 					</div>
+					
 
 					<hr class="colorgraph">
 					<div class="row">
-						<div class="col-xs-12 col-md-6">
-							<input type="submit" value="Register"
-								class="btn btn-primary btn-block btn-lg" tabindex="7">
-						</div>
+					<div class="col-xs-12 col-md-6">
+						<input type="submit" value="Register"
+							class="btn btn-primary btn-block btn-lg" tabindex="7">
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6">
+						<a href="login.jsp" class="btn btn-lg btn-success btn-block" tabindex="7">Login</a>
+					</div>
 					</div>
 				</form>
 			</div>

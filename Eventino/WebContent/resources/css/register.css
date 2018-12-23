@@ -9,11 +9,22 @@
   background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
   background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
 }
+
 body {
 	position: relative;
     height: 100vh;
     background-color: #343a40;
 	background: url("../img/background.jpg") no-repeat center center;
+}
+.form-container{
+  position:fixed;
+  width:1000px;
+  height:700px;
+  left:35%;
+  top:14%;
+}
+.col-xs-8 {
+	color:white;
 }
 .styled-select {
    background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
@@ -120,6 +131,10 @@ select#soflow, select#soflow-color {
    white-space: nowrap;
    width: auto;
 }
+
+	
+
+
 
 select#soflow-color {
    color: #fff;

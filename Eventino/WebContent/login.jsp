@@ -58,8 +58,7 @@
 	<div id="header"></div>
 
 	<div id="form-box" class="form-box">
-		<div class="container">
-
+		<div class="form-container">
 			<div class="row" style="margin-top: 20px">
 				<div
 					class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
@@ -86,10 +85,10 @@
 							<div class="row">
 								<div class="col-xs-6 col-sm-6 col-md-6">
 									<input type="submit" class="btn btn-lg btn-success btn-block"
-										value="Sign In">
+										value="Login">
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-6">
-									<a href="" class="btn btn-lg btn-primary btn-block">Register</a>
+									<a href="register.jsp" class="btn btn-lg btn-primary btn-block">Register</a>
 								</div>
 							</div>
 						</fieldset>
