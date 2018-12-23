@@ -45,9 +45,15 @@ public class ProfileSettings extends HttpServlet {
 			Statement stmt = conn.createStatement();
 			HttpSession session = request.getSession();
 			
+			if(session.getAttribute("id")==null) {
+				RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
+						.getRequestDispatcher("/index.jsp");
+				reqDispatcher.forward(request, response);
+			}
 			
 			int userID = (int)session.getAttribute("id");
 			String userType = (String)session.getAttribute("user-type");
+			
 			
 
 			
@@ -109,9 +115,22 @@ public class ProfileSettings extends HttpServlet {
 			Statement stmt = conn.createStatement();
 			HttpSession session = request.getSession();
 			
+			if(session.getAttribute("id")==null) {
+				RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
+						.getRequestDispatcher("/index.jsp");
+				reqDispatcher.forward(request, response);
+			}
+			
 			
 			int userID = (int)session.getAttribute("id");
 			String userType = (String)session.getAttribute("user-type");
+			
+			if(userType==null || userID==0) {
+				RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
+						.getRequestDispatcher("/index.jsp");
+				reqDispatcher.forward(request, response);
+			}
+
 			
 			
 			if(userType.equals("Advertiser")) {

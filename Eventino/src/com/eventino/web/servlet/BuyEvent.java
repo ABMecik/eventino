@@ -37,6 +37,13 @@ public class BuyEvent extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		HttpSession session = request.getSession();
+		if(session.getAttribute("id")==null) {
+			RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
+					.getRequestDispatcher("/index.jsp");
+			reqDispatcher.forward(request, response);
+		}
 	}
 
 	/**
@@ -52,6 +59,11 @@ public class BuyEvent extends HttpServlet {
 		
 		try {
 			HttpSession session = request.getSession();
+			if(session.getAttribute("id")==null) {
+				RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
+						.getRequestDispatcher("/index.jsp");
+				reqDispatcher.forward(request, response);
+			}
 			
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DBConnection.createConnection();
