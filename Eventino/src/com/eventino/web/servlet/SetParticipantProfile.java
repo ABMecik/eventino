@@ -39,6 +39,13 @@ public class SetParticipantProfile extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		HttpSession session = request.getSession();
+		if(session.getAttribute("id")==null) {
+			RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
+					.getRequestDispatcher("/index.jsp");
+			reqDispatcher.forward(request, response);
+		}
 	}
 
 	/**
@@ -66,9 +73,21 @@ public class SetParticipantProfile extends HttpServlet {
 		try {
 			
 			HttpSession session = request.getSession();
+			if(session.getAttribute("id")==null) {
+				RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
+						.getRequestDispatcher("/index.jsp");
+				reqDispatcher.forward(request, response);
+			}
 			
-			int userID = (int) session.getAttribute("id");
-			System.out.println(userID);
+			
+			int userID = (int)session.getAttribute("id");
+			String userType = (String)session.getAttribute("user-type");
+			
+			if(userType==null || userID==0) {
+				RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
+						.getRequestDispatcher("/index.jsp");
+				reqDispatcher.forward(request, response);
+			}
 
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DBConnection.createConnection();

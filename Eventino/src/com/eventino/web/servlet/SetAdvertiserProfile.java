@@ -62,6 +62,12 @@ public class SetAdvertiserProfile extends HttpServlet {
 
 		try {
 			HttpSession session = request.getSession();
+			
+			if(session.getAttribute("id")==null) {
+				RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
+						.getRequestDispatcher("/index.jsp");
+				reqDispatcher.forward(request, response);
+			}
 
 			int userID = (int) session.getAttribute("id");
 			System.out.println(userID);

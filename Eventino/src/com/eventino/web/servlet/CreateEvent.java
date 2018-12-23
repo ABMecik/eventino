@@ -39,6 +39,14 @@ public class CreateEvent extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		
+		HttpSession session = request.getSession();
+		if(session.getAttribute("id")==null) {
+			RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
+					.getRequestDispatcher("/index.jsp");
+			reqDispatcher.forward(request, response);
+		}
 	}
 
 	/**
@@ -64,6 +72,11 @@ public class CreateEvent extends HttpServlet {
 
 		try {
 			HttpSession session = request.getSession();
+			if(session.getAttribute("id")==null) {
+				RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
+						.getRequestDispatcher("/index.jsp");
+				reqDispatcher.forward(request, response);
+			}
 
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DBConnection.createConnection();
