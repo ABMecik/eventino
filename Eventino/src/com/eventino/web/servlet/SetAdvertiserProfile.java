@@ -19,14 +19,14 @@ import com.mysql.jdbc.PreparedStatement;
 /**
  * Servlet implementation class AdvertiserProfile
  */
-@WebServlet("/AdvertiserProfile")
-public class AdvertiserProfile extends HttpServlet {
+@WebServlet("/SetAdvertiserProfile")
+public class SetAdvertiserProfile extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AdvertiserProfile() {
+    public SetAdvertiserProfile() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,6 +37,8 @@ public class AdvertiserProfile extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		
 	}
 
 	/**

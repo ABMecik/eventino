@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@page import="com.eventino.web.model.ParticipantModel"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
 <html lang="en-US">
 <head>
@@ -19,10 +21,9 @@
 	<div id="wrapper">
 		<h1>My Profile</h1>
 		<form name="CreatEventForm" id="creat-event-form" method="POST"
-			action="Profile">
+			action="SetParticipantProfile">
 			<div class="col-2">
-				<label> Name <input placeholder="What is your name?"
-					id="name" name="name" tabindex="1">
+				<label> Name <input id="name" name="name" tabindex="1" value="${participantModel.getParticipant_name()}">
 				</label>
 			</div>
 			<div class="col-2">
@@ -285,7 +286,7 @@
 	%>
 	<div id="wrapper">
 		<form name="CreatEventForm" id="creat-event-form" method="POST"
-			action="AdvertiserProfile">
+			action="SetAdvertiserProfile">
 			<div class="col-2">
 				<label> Name <input placeholder="Corporation/Community name"
 					id="name" name="advertiser_name" tabindex="1">

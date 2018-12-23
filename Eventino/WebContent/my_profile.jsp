@@ -72,7 +72,7 @@
                     </div>
                     <div class="col-md-2">
 	                    <div class="prf-set-btn">
-	                         <a id="settings-tab" href="profile_settings.jsp">Profile Settings</a>
+	                         <a id="settings-tab" href="/Eventino/ProfileSettings">Profile Settings</a>
 	                    </div>
                     </div>
                 </div>

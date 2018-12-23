@@ -19,14 +19,14 @@ import com.mysql.jdbc.PreparedStatement;
 /**
  * Servlet implementation class Profile
  */
-@WebServlet("/Profile")
-public class Profile extends HttpServlet {
+@WebServlet("/SetParticipantProfile")
+public class SetParticipantProfile extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public Profile() {
+	public SetParticipantProfile() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -64,6 +64,7 @@ public class Profile extends HttpServlet {
 		System.out.println(type);
 
 		try {
+			
 			HttpSession session = request.getSession();
 			
 			int userID = (int) session.getAttribute("id");
