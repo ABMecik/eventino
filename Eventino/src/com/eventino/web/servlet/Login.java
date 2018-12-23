@@ -74,7 +74,6 @@ public class Login extends HttpServlet {
 				rs.close();
 				
 				if(aTp.equals("Participant")) {
-					System.out.println("ok");
 					ResultSet rs1 = stmt.executeQuery("SELECT participant_type FROM participant WHERE participant_id='"+ userID + "'");
 					if(rs1.next()) {
 						session.setAttribute("participant-type", rs1.getString("participant_type"));

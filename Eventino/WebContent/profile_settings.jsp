@@ -2,6 +2,8 @@
 	pageEncoding="ISO-8859-1"%>
 <%@page import="com.eventino.web.model.ParticipantModel"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@page import="com.eventino.web.model.AdvertiserModel"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
 <html lang="en-US">
 <head>
@@ -28,19 +30,19 @@
 			</div>
 			<div class="col-2">
 				<label> Surname <input placeholder="What is your surname?"
-					id="surname" name="surname" tabindex="1">
+					id="surname" name="surname" tabindex="1" value="${participantModel.getSurname()}">
 				</label>
 			</div>
 			<div class="col-3">
 				<label> Date of Birth <input type="text"
 					placeholder="YYYY-MM-DD" title="YYYY-MM-DD"
 					pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"
-					id="date_of_birth" name="date_of_birth" tabindex="2">
+					id="date_of_birth" name="date_of_birth" tabindex="2" value="${participantModel.getBirthdate()}">
 				</label>
 			</div>
 			<div class="col-4">
 				<label> Gender <select name="gender" tabindex="2">
-						<option value="">-- Select your gender --</option>
+						<option value="${participantModel.getGender()}" selected="${participantModel.getGender()}">${participantModel.getGender()}</option>
 						<option value="Male">Male</option>
 						<option value="Female">Female</option>
 				</select>
@@ -48,7 +50,7 @@
 			</div>
 			<div class="col-4">
 				<label> Nationality <select name="nationality" tabindex="3">
-						<option value="">-- Select your nationality --</option>
+						<option selected="${participantModel.getNationality()}" value="${participantModel.getNationality()}">${participantModel.getNationality()}</option>
 						<option value="afghan">Afghan</option>
 						<option value="albanian">Albanian</option>
 						<option value="algerian">Algerian</option>
@@ -247,30 +249,30 @@
 			</div>
 			<div class="col-4">
 				<label> Job Title <input placeholder="What is your job?"
-					id="job_title" name="job_title" tabindex="3">
+					id="job_title" name="job_title" tabindex="3" value="${participantModel.getJob_title()}">
 				</label>
 			</div>
 			<div class="col-4">
 				<label> Foreign Languages <input
 					placeholder="What foreign languages do you speak?"
-					id="foreign_languages" name="foreign_languages" tabindex="3">
+					id="foreign_languages" name="foreign_languages" tabindex="3" value="${participantModel.getForeign_languages()}">
 				</label>
 			</div>
 			<div class="col-5">
 				<label> Certificates <input
 					placeholder="Which certificates do you have?" id="certificates"
-					name="certificates" tabindex="4">
+					name="certificates" tabindex="4" value="${participantModel.getCertificates()}">
 				</label>
 			</div>
 			<div class="col-4">
 				<label> Profile Picture <input type="file"
 					placeholder="Choose your Profile Picture." name="profile_picture"
-					accept="image/gif, image/jpeg, image/png, image/jpg" tabindex="4">
+					accept="image/gif, image/jpeg, image/png, image/jpg" tabindex="4" value="${participantModel.getProfile_picture()}">
 				</label>
 			</div>
 			<div class="col-4">
-				<label> Are you a student? <select name="student_type"">
-						<option value="">-- Select --</option>
+				<label> Are you a student? <select name="student_type">
+						<option selected="${participantModel.getParticipant_type()}" value="${participantModel.getParticipant_type()}">${participantModel.getParticipant_type()}</option>
 						<option value="Student">Student</option>
 						<option value="Non-Student">Non-student</option>
 				</select>
@@ -289,19 +291,19 @@
 			action="SetAdvertiserProfile">
 			<div class="col-2">
 				<label> Name <input placeholder="Corporation/Community name"
-					id="name" name="advertiser_name" tabindex="1">
+					id="name" name="advertiser_name" tabindex="1" value="${advertiserModel.getAdvertiser_name()}">
 				</label>
 			</div>
 			<div class="col-2">
 				<label> Description <input
 					placeholder="Introduce your corporation/community" id="surname"
-					name="description" tabindex="2">
+					name="description" tabindex="2" value="${advertiserModel.getAdvertiser_description()}">
 				</label>
 			</div>
 			<div class="col-4">
 				<label> Advertiser Type <select name="advertiser_type"
 					tabindex="3">
-						<option>-- Select your advertiser type --</option>
+						<option value="${advertiserModel.getAdvertiser_type()}" selected="${advertiserModel.getAdvertiser_type()}">${advertiserModel.getAdvertiser_type()}</option>
 						<option value="Community">Community</option>
 						<option value="Corporation">Corporation</option>
 				</select>
@@ -310,7 +312,7 @@
 			<div class="col-4">
 				<label> Logo <input type="file"
 					placeholder="Choose your logo." name="logo"
-					accept="image/gif, image/jpeg, image/png, image/jpg">
+					accept="image/gif, image/jpeg, image/png, image/jpg" value="${advertiserModel.getLogo()}">
 				</label>
 			</div>
 			<div class="col-submit">
