@@ -53,7 +53,7 @@
 
 	<div id="header"></div>
 
-	<div id="footer"></div>
+	
 	<hr>
 <div class="container bootstrap snippet">
     <div class="row">
@@ -324,7 +324,7 @@
 
         </div><!--/col-9-->
     </div><!--/row-->
-	
+	<div id="footer"></div>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 	<script>
