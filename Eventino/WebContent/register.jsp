@@ -44,14 +44,14 @@
 <script src="https://code.jquery.com/jquery-3.3.1.js"
 	integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
 	crossorigin="anonymous">
-		
-	</script>
+	
+</script>
 <script>
-		$(function() {
-			$("#header").load("header.jsp");
-			$("#footer").load("footer.jsp");
-		});
-	</script>
+	$(function() {
+		$("#header").load("header.jsp");
+		$("#footer").load("footer.jsp");
+	});
+</script>
 
 </head>
 
@@ -64,10 +64,9 @@
 		<div class="row">
 			<div
 				class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-				<form role="form" name="regForm" id="register-form" action="Register" method="POST">
-					<h2>
-						Please Sign Up <small>It's free and always will be.</small>
-					</h2>
+				<form role="form" name="regForm" id="register-form"
+					action="Register" method="POST">
+					<br> <br>  <br>
 					<hr class="colorgraph">
 					<div class="form-group">
 						<input type="text" name="username" id="username"
@@ -84,7 +83,8 @@
 					</div>
 					<div class="form-group">
 						<div class="dropdown">
-							<select name="account-type" class="dropdown-select-version select" tabindex="4">
+							<select name="account-type"
+								class="dropdown-select-version select" tabindex="4">
 								<option disabled="disabled" selected="selected">Account
 									Type</option>
 								<option>Participant</option>
@@ -129,9 +129,6 @@
 						<div class="col-xs-12 col-md-6">
 							<input type="submit" value="Register"
 								class="btn btn-primary btn-block btn-lg" tabindex="7">
-						</div>
-						<div class="col-xs-12 col-md-6">
-							<a href="#" class="btn btn-success btn-block btn-lg">Sign In</a>
 						</div>
 					</div>
 				</form>

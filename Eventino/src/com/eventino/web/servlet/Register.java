@@ -60,7 +60,7 @@ public class Register extends HttpServlet {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/event_management", "root", "mysql123");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/event_management", "root", "belmakays777");
 			Statement stmt = conn.createStatement();
 			
 			int ks = stmt.executeUpdate("INSERT INTO user VALUES(null,'" + username + "','" + password + "','" + email + "','" + phone + "',null,'" + type + "')");
