@@ -1,315 +1,403 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-  pageEncoding="ISO-8859-1"%>
-<!doctype html>
-<html lang="en-US">
+	pageEncoding="ISO-8859-1"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="com.eventino.web.model.Event"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html">
-  <title>My Profile</title>
-  <link rel="stylesheet" type="text/css" media="all" href="resources/css/create_event.css">
+<meta charset="ISO-8859-1">
+<title>Events</title>
+
+<!------ Bootstrap ---------->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Kaushan+Script"
+	rel="stylesheet">
+<link
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	rel="stylesheet"
+	integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" />
+<link rel="stylesheet"
+	href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+	media="screen">
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+<script src="resources/js/event.js"></script>
+
+<script> 
+	$(function(){
+	  $("#header").load("header.jsp"); 
+	  $("#footer").load("footer.jsp");
+	});
+	</script>
+
 </head>
 <body>
-  <div id="wrapper">
-    <h1>My Profile</h1>
-    <form name="CreatEventForm" id="creat-event-form" method="POST">
-      <div class="col-2">
-        <label>
-          Name
-          <input placeholder="What is your name?" id="name" name="name" tabindex="1">
-        </label>
-      </div>
-      <div class="col-2">
-        <label>
-          Surname
-          <input placeholder="What is your surname?" id="surname" name="surname" tabindex="1">
-        </label>
-      </div>
-      <div class="col-3">
-        <label>
-          Date of Birth
-          <input type="text" placeholder="YYYY-MM-DD" title="YYYY-MM-DD" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" 
-           id="date_of_birth" name="date_of_birth" tabindex="2">
-        </label>
-      </div>
-      <div class="col-3">
-        <label>
-          Address
-          <input placeholder="How can we reach you?" id="address" name="address" tabindex="2">
-        </label>
-      </div>
-      <div class="col-4">
-        <label>
-          Gender
-          <select name="gender" tabindex="2">
-			<option value="">-- Select your gender --</option>
-			<option value="male">Male</option>
-			<option value="male">Female</option>	
-			</select>
-		</label>
-	  </div>
-      <div class="col-4">
-        <label>
-          Nationality
-          <select name="nationality" tabindex="3">
-  <option value="">-- Select your nationality --</option>
-  <option value="afghan">Afghan</option>
-  <option value="albanian">Albanian</option>
-  <option value="algerian">Algerian</option>
-  <option value="american">American</option>
-  <option value="andorran">Andorran</option>
-  <option value="angolan">Angolan</option>
-  <option value="antiguans">Antiguans</option>
-  <option value="argentinean">Argentinean</option>
-  <option value="armenian">Armenian</option>
-  <option value="australian">Australian</option>
-  <option value="austrian">Austrian</option>
-  <option value="azerbaijani">Azerbaijani</option>
-  <option value="bahamian">Bahamian</option>
-  <option value="bahraini">Bahraini</option>
-  <option value="bangladeshi">Bangladeshi</option>
-  <option value="barbadian">Barbadian</option>
-  <option value="barbudans">Barbudans</option>
-  <option value="batswana">Batswana</option>
-  <option value="belarusian">Belarusian</option>
-  <option value="belgian">Belgian</option>
-  <option value="belizean">Belizean</option>
-  <option value="beninese">Beninese</option>
-  <option value="bhutanese">Bhutanese</option>
-  <option value="bolivian">Bolivian</option>
-  <option value="bosnian">Bosnian</option>
-  <option value="brazilian">Brazilian</option>
-  <option value="british">British</option>
-  <option value="bruneian">Bruneian</option>
-  <option value="bulgarian">Bulgarian</option>
-  <option value="burkinabe">Burkinabe</option>
-  <option value="burmese">Burmese</option>
-  <option value="burundian">Burundian</option>
-  <option value="cambodian">Cambodian</option>
-  <option value="cameroonian">Cameroonian</option>
-  <option value="canadian">Canadian</option>
-  <option value="cape verdean">Cape Verdean</option>
-  <option value="central african">Central African</option>
-  <option value="chadian">Chadian</option>
-  <option value="chilean">Chilean</option>
-  <option value="chinese">Chinese</option>
-  <option value="colombian">Colombian</option>
-  <option value="comoran">Comoran</option>
-  <option value="congolese">Congolese</option>
-  <option value="costa rican">Costa Rican</option>
-  <option value="croatian">Croatian</option>
-  <option value="cuban">Cuban</option>
-  <option value="cypriot">Cypriot</option>
-  <option value="czech">Czech</option>
-  <option value="danish">Danish</option>
-  <option value="djibouti">Djibouti</option>
-  <option value="dominican">Dominican</option>
-  <option value="dutch">Dutch</option>
-  <option value="east timorese">East Timorese</option>
-  <option value="ecuadorean">Ecuadorean</option>
-  <option value="egyptian">Egyptian</option>
-  <option value="emirian">Emirian</option>
-  <option value="equatorial guinean">Equatorial Guinean</option>
-  <option value="eritrean">Eritrean</option>
-  <option value="estonian">Estonian</option>
-  <option value="ethiopian">Ethiopian</option>
-  <option value="fijian">Fijian</option>
-  <option value="filipino">Filipino</option>
-  <option value="finnish">Finnish</option>
-  <option value="french">French</option>
-  <option value="gabonese">Gabonese</option>
-  <option value="gambian">Gambian</option>
-  <option value="georgian">Georgian</option>
-  <option value="german">German</option>
-  <option value="ghanaian">Ghanaian</option>
-  <option value="greek">Greek</option>
-  <option value="grenadian">Grenadian</option>
-  <option value="guatemalan">Guatemalan</option>
-  <option value="guinea-bissauan">Guinea-Bissauan</option>
-  <option value="guinean">Guinean</option>
-  <option value="guyanese">Guyanese</option>
-  <option value="haitian">Haitian</option>
-  <option value="herzegovinian">Herzegovinian</option>
-  <option value="honduran">Honduran</option>
-  <option value="hungarian">Hungarian</option>
-  <option value="icelander">Icelander</option>
-  <option value="indian">Indian</option>
-  <option value="indonesian">Indonesian</option>
-  <option value="iranian">Iranian</option>
-  <option value="iraqi">Iraqi</option>
-  <option value="irish">Irish</option>
-  <option value="israeli">Israeli</option>
-  <option value="italian">Italian</option>
-  <option value="ivorian">Ivorian</option>
-  <option value="jamaican">Jamaican</option>
-  <option value="japanese">Japanese</option>
-  <option value="jordanian">Jordanian</option>
-  <option value="kazakhstani">Kazakhstani</option>
-  <option value="kenyan">Kenyan</option>
-  <option value="kittian and nevisian">Kittian and Nevisian</option>
-  <option value="kuwaiti">Kuwaiti</option>
-  <option value="kyrgyz">Kyrgyz</option>
-  <option value="laotian">Laotian</option>
-  <option value="latvian">Latvian</option>
-  <option value="lebanese">Lebanese</option>
-  <option value="liberian">Liberian</option>
-  <option value="libyan">Libyan</option>
-  <option value="liechtensteiner">Liechtensteiner</option>
-  <option value="lithuanian">Lithuanian</option>
-  <option value="luxembourger">Luxembourger</option>
-  <option value="macedonian">Macedonian</option>
-  <option value="malagasy">Malagasy</option>
-  <option value="malawian">Malawian</option>
-  <option value="malaysian">Malaysian</option>
-  <option value="maldivan">Maldivan</option>
-  <option value="malian">Malian</option>
-  <option value="maltese">Maltese</option>
-  <option value="marshallese">Marshallese</option>
-  <option value="mauritanian">Mauritanian</option>
-  <option value="mauritian">Mauritian</option>
-  <option value="mexican">Mexican</option>
-  <option value="micronesian">Micronesian</option>
-  <option value="moldovan">Moldovan</option>
-  <option value="monacan">Monacan</option>
-  <option value="mongolian">Mongolian</option>
-  <option value="moroccan">Moroccan</option>
-  <option value="mosotho">Mosotho</option>
-  <option value="motswana">Motswana</option>
-  <option value="mozambican">Mozambican</option>
-  <option value="namibian">Namibian</option>
-  <option value="nauruan">Nauruan</option>
-  <option value="nepalese">Nepalese</option>
-  <option value="new zealander">New Zealander</option>
-  <option value="ni-vanuatu">Ni-Vanuatu</option>
-  <option value="nicaraguan">Nicaraguan</option>
-  <option value="nigerien">Nigerien</option>
-  <option value="north korean">North Korean</option>
-  <option value="northern irish">Northern Irish</option>
-  <option value="norwegian">Norwegian</option>
-  <option value="omani">Omani</option>
-  <option value="pakistani">Pakistani</option>
-  <option value="palauan">Palauan</option>
-  <option value="panamanian">Panamanian</option>
-  <option value="papua new guinean">Papua New Guinean</option>
-  <option value="paraguayan">Paraguayan</option>
-  <option value="peruvian">Peruvian</option>
-  <option value="polish">Polish</option>
-  <option value="portuguese">Portuguese</option>
-  <option value="qatari">Qatari</option>
-  <option value="romanian">Romanian</option>
-  <option value="russian">Russian</option>
-  <option value="rwandan">Rwandan</option>
-  <option value="saint lucian">Saint Lucian</option>
-  <option value="salvadoran">Salvadoran</option>
-  <option value="samoan">Samoan</option>
-  <option value="san marinese">San Marinese</option>
-  <option value="sao tomean">Sao Tomean</option>
-  <option value="saudi">Saudi</option>
-  <option value="scottish">Scottish</option>
-  <option value="senegalese">Senegalese</option>
-  <option value="serbian">Serbian</option>
-  <option value="seychellois">Seychellois</option>
-  <option value="sierra leonean">Sierra Leonean</option>
-  <option value="singaporean">Singaporean</option>
-  <option value="slovakian">Slovakian</option>
-  <option value="slovenian">Slovenian</option>
-  <option value="solomon islander">Solomon Islander</option>
-  <option value="somali">Somali</option>
-  <option value="south african">South African</option>
-  <option value="south korean">South Korean</option>
-  <option value="spanish">Spanish</option>
-  <option value="sri lankan">Sri Lankan</option>
-  <option value="sudanese">Sudanese</option>
-  <option value="surinamer">Surinamer</option>
-  <option value="swazi">Swazi</option>
-  <option value="swedish">Swedish</option>
-  <option value="swiss">Swiss</option>
-  <option value="syrian">Syrian</option>
-  <option value="taiwanese">Taiwanese</option>
-  <option value="tajik">Tajik</option>
-  <option value="tanzanian">Tanzanian</option>
-  <option value="thai">Thai</option>
-  <option value="togolese">Togolese</option>
-  <option value="tongan">Tongan</option>
-  <option value="trinidadian or tobagonian">Trinidadian or Tobagonian</option>
-  <option value="tunisian">Tunisian</option>
-  <option value="turkish">Turkish</option>
-  <option value="tuvaluan">Tuvaluan</option>
-  <option value="ugandan">Ugandan</option>
-  <option value="ukrainian">Ukrainian</option>
-  <option value="uruguayan">Uruguayan</option>
-  <option value="uzbekistani">Uzbekistani</option>
-  <option value="venezuelan">Venezuelan</option>
-  <option value="vietnamese">Vietnamese</option>
-  <option value="welsh">Welsh</option>
-  <option value="yemenite">Yemenite</option>
-  <option value="zambian">Zambian</option>
-  <option value="zimbabwean">Zimbabwean</option>
-</select>
-        </label>
-      </div>  
-      <div class="col-4">
-        <label>
-          Job Title
-          <input placeholder="What is your job?" id="job_title" name="job_title" tabindex="3">
-        </label>
-      </div>
-      <div class="col-4">
-        <label>
-          Foreign Languages
-          <input placeholder="What foreign languages do you speak?" id="foreign_languages" name="foreign_languages" tabindex="3">
-        </label>
-      </div>
-      <div class="col-5">
-        <label>
-          Certificates
-          <input placeholder="Which certificates do you have?" id="certificates" name="certificates" tabindex="4">
-        </label>
-      </div>
-      <div class="col-5">
-        <label>
-          Profile Picture
-          <input type="file" placeholder="Choose your Profile Picture." name="profile_picture" accept="image/gif, image/jpeg, image/png, image/jpg" tabindex="4">
-        </label>
-      </div>
-      <div class="col-5">
-        <label>
-           I'm a student
-      		<input type="checkbox" name="student_type" value="student_type"> 
-      </label>
-      </div>
-      <div class="col-submit">
-        <button class="submitbtn">Update Information</button>
-      </div>  
-	  </form>
-	  </div>
-	  <div id="wrapper">
-	  <form name="CreatEventForm" id="creat-event-form" method="POST">
-	      <div class="col-2">
-	        <label>
-	          Name
-	          <input placeholder="Corporation/Community name" id="name" name="name" tabindex="1">
-	        </label>
-	      </div>
-	      <div class="col-2">
-	        <label>
-	          Description
-	          <input placeholder="Introduce your corporation/community" id="surname" name="description" tabindex="2">
-	        </label>
-	      </div>
-	      <div class="col-5">
-	        <label>
-	           Corporation
-	      		<input type="checkbox" name="corporation_type" class="check" value=corporation_type" tabindex="3"> 
-	      </label>
-	      <label>
-	           Community
-	      		<input type="checkbox" name="community_type" class="check" value="community_type" tabindex="3"> 
-	      </label>
-	      </div>
-	      <div class="col-submit">
-	        <button class="submitbtn">Update Information</button>
-	      </div>  
-	    </form>
-	  </div>
+
+	<div id="header"></div>
+
+	<div id="footer"></div>
+	<hr>
+<div class="container bootstrap snippet">
+    <div class="row">
+  		<div class="col-sm-10"><h1>User name</h1></div>
+    	<div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100"></a></div>
+    </div>
+    <div class="row">
+  		<div class="col-sm-3"><!--left col-->
+              
+
+      <div class="text-center">
+        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+        <h6>Upload a different photo...</h6>
+        <input type="file" class="text-center center-block file-upload">
+      </div></hr><br>
+
+               
+          <div class="panel panel-default">
+            <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
+            <div class="panel-body"><a href="http://bootnipets.com">bootnipets.com</a></div>
+          </div>
+          
+          
+          <ul class="list-group">
+            <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 125</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>
+          </ul> 
+               
+          <div class="panel panel-default">
+            <div class="panel-heading">Social Media</div>
+            <div class="panel-body">
+            	<i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>
+            </div>
+          </div>
+          
+        </div><!--/col-3-->
+    	<div class="col-sm-9">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+                <li><a data-toggle="tab" href="#messages">Menu 1</a></li>
+                <li><a data-toggle="tab" href="#settings">Menu 2</a></li>
+              </ul>
+
+              
+          <div class="tab-content">
+            <div class="tab-pane active" id="home">
+                <hr>
+                  <form class="form" action="##" method="post" id="registrationForm">
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="first_name"><h4>First name</h4></label>
+                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            <label for="last_name"><h4>Last name</h4></label>
+                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="phone"><h4>Phone</h4></label>
+                              <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          <div class="col-xs-6">
+                             <label for="mobile"><h4>Mobile</h4></label>
+                              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="email"><h4>Email</h4></label>
+                              <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="email"><h4>Location</h4></label>
+                              <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="password"><h4>Password</h4></label>
+                              <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            <label for="password2"><h4>Verify</h4></label>
+                              <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                           <div class="col-xs-12">
+                                <br>
+                              	<button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                               	<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                            </div>
+                      </div>
+              	</form>
+              
+              <hr>
+              
+             </div><!--/tab-pane-->
+             <div class="tab-pane" id="messages">
+               
+               <h2></h2>
+               
+               <hr>
+                  <form class="form" action="##" method="post" id="registrationForm">
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="first_name"><h4>First name</h4></label>
+                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            <label for="last_name"><h4>Last name</h4></label>
+                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="phone"><h4>Phone</h4></label>
+                              <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          <div class="col-xs-6">
+                             <label for="mobile"><h4>Mobile</h4></label>
+                              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="email"><h4>Email</h4></label>
+                              <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="email"><h4>Location</h4></label>
+                              <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="password"><h4>Password</h4></label>
+                              <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            <label for="password2"><h4>Verify</h4></label>
+                              <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                           <div class="col-xs-12">
+                                <br>
+                              	<button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                               	<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                            </div>
+                      </div>
+              	</form>
+               
+             </div><!--/tab-pane-->
+             <div class="tab-pane" id="settings">
+            		
+               	
+                  <hr>
+                  <form class="form" action="##" method="post" id="registrationForm">
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="first_name"><h4>First name</h4></label>
+                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            <label for="last_name"><h4>Last name</h4></label>
+                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="phone"><h4>Phone</h4></label>
+                              <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          <div class="col-xs-6">
+                             <label for="mobile"><h4>Mobile</h4></label>
+                              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="email"><h4>Email</h4></label>
+                              <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="email"><h4>Location</h4></label>
+                              <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="password"><h4>Password</h4></label>
+                              <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            <label for="password2"><h4>Verify</h4></label>
+                              <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                           <div class="col-xs-12">
+                                <br>
+                              	<button class="btn btn-lg btn-success pull-right" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                               	<!--<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>-->
+                            </div>
+                      </div>
+              	</form>
+              </div>
+               
+              </div><!--/tab-pane-->
+          </div><!--/tab-content-->
+
+        </div><!--/col-9-->
+    </div><!--/row-->
+	
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+	<script>
+              new WOW().init();
+              </script>
+	<script>
+        $(window).scroll( function(){
+
+ 
+          var topWindow = $(window).scrollTop();
+          var topWindow = topWindow * 1.5;
+          var windowHeight = $(window).height();
+          var position = topWindow / windowHeight;
+          position = 1 - position;
+        
+          $('#bottom').css('opacity', position);
+        
+        });
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.display = "0";
+            document.body.style.backgroundColor = "white";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginRight= "0";
+            document.body.style.backgroundColor = "white";
+        }
+
+ 
+     $(window).on("scroll", function() {
+            if ($(this).scrollTop() > 10) {
+                $("nav.navbar").addClass("mybg-dark");
+                $("nav.navbar").addClass("navbar-shrink");
+              
+
+            } else {
+                $("nav.navbar").removeClass("mybg-dark");
+                $("nav.navbar").removeClass("navbar-shrink");
+               
+            }
+            
+      
+
+        });
+        
+        $(function() {
+  $('#bottom').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 500);
+        return false;
+      }
+    }
+  });
+});
+
+
+</script>
+	<script>
+    $(document).ready(function(){
+      $(".fancybox").fancybox({
+            openEffect: "none",
+            closeEffect: "none"
+        });
+    });
+</script>
+
 </body>
 </html>
