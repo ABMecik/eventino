@@ -178,7 +178,8 @@
 										}
 									}
 								%>
-
+								<div class="form-group">
+								</div>
 								<div class="text-center">
 									<input type="submit" class="btn btn-lg btn-success btn-block"
 										value="Buy">
