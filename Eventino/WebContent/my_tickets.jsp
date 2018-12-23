@@ -8,11 +8,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Events</title>
+<title>Tickets</title>
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -23,14 +24,14 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 	
 	<link type="text/css" rel="stylesheet"href="resources/css/style.css" />
-	
-	<link type="text/css" rel="stylesheet"href="resources/css/style.css" />
+
 
 <link type="text/css" rel="stylesheet"href="resources/css/my_profile.css" />
 
 
 
-<script src="resources/js/my_profile.js"></script>
+
+
 
 <script> 
 	$(function(){
@@ -58,14 +59,14 @@
                     <div class="col-md-6">
                         <div class="profile-head">
                                     <h4>
-                                        Profile
+                                        My Tickets
                                     </h4>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="my_profile.jsp" role="tab" aria-controls="home" aria-selected="true">Profile Information</a>
+                                    <a class="nav-link" id="home-tab" data-toggle="tab" href="my_profile.jsp" role="tab" aria-controls="home" aria-selected="false">Profile Information</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="my_tickets.jsp" role="tab" aria-controls="profile" aria-selected="false">My Tickets</a>
+                                    <a class="nav-link active" id="profile-tab" data-toggle="tab" href="my_tickets.jsp" role="tab" aria-controls="profile" aria-selected="true">My Tickets</a>
                                 </li>
                             </ul>
                         </div>
@@ -88,82 +89,48 @@
                         <div class="tab-content profile-tab" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Name</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Name</p> 
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Surname</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Surname</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Date of Birth</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Date of Birth</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Gender</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Male</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Nationality</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Nationality</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Phone</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Phone Number</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Job Title</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Web Developer and Designer</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Foreign Languages</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Eng, Spa</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Certificates</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Zero to One</p>
-                                            </div>
-                                        </div>
-                            </div>
+								    	<div class="col-md-8 col-md-offset-2">
+								    	    <div class="panel panel-default ticket-list">
+								              <div class="panel-heading">
+								                <h3 class="panel-title text-center">Ticket</h3>
+								              </div>
+								              <div class="panel-body ">
+								                  <table class="table">
+								                    <thead class='table-head'>
+								                      <tr class='table-head'>
+								                        <th>TICKET TYPE</th>
+								                        <th>PRICE</th>
+								                        <th>QUANTITY</th>
+								                      </tr>
+								                    </thead>
+								                    <tbody>
+								                      <tr>
+								                        <td>John</td>
+								                        <td>Doe</td>
+								                        <td>john@example.com</td>
+								                      </tr>
+								                      <tr>
+								                        <td>Mary</td>
+								                        <td>Moe</td>
+								                        <td>mary@example.com</td>
+								                      </tr>
+								                      <tr>
+								                        <td>July</td>
+								                        <td>Dooley</td>
+								                        <td>july@example.com</td>
+								                      </tr>
+								                    </tbody>
+								                  </table>    	
+								              </div>
+								            </div>
+								    	</div>
+									</div>
                             </div>
                         </div>
                     </div>
-                </div>          
+                </div>
+            </form>           
+        </div>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 	<script>
