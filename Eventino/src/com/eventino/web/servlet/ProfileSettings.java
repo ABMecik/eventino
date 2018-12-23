@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 
 import com.eventino.db.connection.DBConnection;
 import com.eventino.web.model.ParticipantModel;
+import com.eventino.web.model.AdvertiserModel;
 
 /**
  * Servlet implementation class ProfileSettings
@@ -61,7 +62,12 @@ public class ProfileSettings extends HttpServlet {
 				
 				ResultSet rs = stmt.executeQuery("SELECT * FROM advertiser WHERE advertiser_id='"+ userID + "'");
 				if(rs.next()) {
-					request.setAttribute("advertiserModel", "");
+					AdvertiserModel model = new AdvertiserModel();
+					model.setAdvertiser_name(rs.getString("advertiser_name"));
+					model.setLogo(rs.getString("logo"));
+					model.setAdvertiser_description(rs.getString("advertiser_description"));
+					model.setAdvertiser_type(rs.getString("advertiser_type"));					
+					request.setAttribute("advertiserModel", model);
 					request.setAttribute("participantModel", "");
 				}
 				
@@ -71,13 +77,23 @@ public class ProfileSettings extends HttpServlet {
 				ResultSet rs = stmt.executeQuery("SELECT * FROM Participant WHERE participant_id='"+ userID + "'");
 				if(rs.next()) {
 					ParticipantModel model = new ParticipantModel();
+					model.setProfile_picture(rs.getString("profile_picture"));
+					model.setNationality(rs.getString("nationality"));
+					model.setBirthdate(rs.getDate("birthdate"));
+					model.setSurname(rs.getString("surname"));
 					model.setParticipant_name(rs.getString("participant_name"));
+					model.setGender(rs.getString("gender"));
+					model.setJob_title(rs.getString("job_title"));
+					model.setForeign_languages(rs.getString("foreign_languages"));
+					model.setCertificates(rs.getString("vertificates"));
+					model.setParticipant_type(rs.getString("participant_type"));
 					request.setAttribute("advertiserModel", "");
 					request.setAttribute("participantModel", model);
 				}
 				
 			}
 			
+		
 			
 			
 			RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
