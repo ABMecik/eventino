@@ -56,11 +56,17 @@
 <body>
 	<div id="header"></div>
 	<div class="btns-qrs">
-	<button onclick="showTable1()">Query 1</button>
-	<button onclick="showTable2()">Query 2</button>
-	<button onclick="showTable3()">Query 3</button>
+	<button onclick="showTable1()" class="btn-query">Query 1</button>
+	<button onclick="showTable2()" class="btn-query">Query 2</button>
+	<button onclick="showTable3()" class="btn-query">Query 3</button>
+	</div>
+	<div class="btns-qrs">
+	<div class="query-info" id="qr-info-1"></div>
+	<div class="query-info" id="qr-info-2"></div>
+	<div class="query-info" id="qr-info-3"></div>
 	</div>
 	<div class="table-content" id="tbl-cnt-1">
+	<hr><p>Belli bir corporationa bagli participantlarin elde ettigi tum sertifikalar</p>
 		<table class="container_table">
 			<thead>
 				<tr>
@@ -85,6 +91,7 @@
 		</table>
 		</div>
 		<div class="table-content" id="tbl-cnt-2">
+		<hr><p>Advertiserlarin ismi ve kac tane event ilani verdikleri</p>
 		<table class="container_table">
 			<thead>
 				<tr>
@@ -109,6 +116,7 @@
 		</table>
 		</div>
 		<div class="table-content" id="tbl-cnt-3">
+		<hr><p>Belli bir ogrencinin tum ticket istekleri ve isteklerin hangi evente ait olduklari</p>
 		<table class="container_table">
 			<thead>
 				<tr>
@@ -138,7 +146,6 @@
 	</div>
 
     <script>
-    var x
     function showTable1() {
     	  var x = document.getElementById("tbl-cnt-1");
     	  if (x.style.display === "none") {
@@ -154,6 +161,7 @@
   	  } else {
   	    x.style.display = "none";
   	  }
+
   	}
     function showTable3() {
   	  var x = document.getElementById("tbl-cnt-3");
