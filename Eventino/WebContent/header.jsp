@@ -13,7 +13,7 @@
             <div id="main">
                 <a href="javascript:void(0)" class="openNav"><span class="fa fa-bars" onclick="openNav()"></span></a>
             </div>
-
+			
          
            
         <div id="mySidenav" class="sidenav">
@@ -46,6 +46,9 @@
                     </li>
                     <li class="nav-link">
                         <a class="btn btn-primary btn-block btn-register" href="#">Register</a>
+                    </li>
+                    <li class="nav-link">
+                        <button type = "submit" class = "btn btn-primary btn-block btn-login">Submit Button</button>
                     </li>
 
                 </ul>
