@@ -66,7 +66,7 @@ public class CreateEvent extends HttpServlet {
 
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/event_management", "root",
-					"belmakays777");
+					"mysql123");
 
 			String sql = "UPDATE event SET event_address=?, event_title=?, event_desc=?, event_expire_date=?, event_publish_date=?, event_time=?, event_type=?, event_photo=? WHERE event.event_id=?";
 

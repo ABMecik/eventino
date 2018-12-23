@@ -50,41 +50,39 @@ public class Events extends HttpServlet {
 
 			ResultSet rs = stmt.executeQuery("SELECT * FROM event");
 
-			if (rs.next()) {
-				
-				List<Event> events = new ArrayList<Event>();
-
-				while(rs.next()){
-					
-					Event event = new Event(rs.getInt("event_id"),
-							rs.getInt("advertiser_id"),
-							rs.getInt("system_account_transaction_id"),
-							rs.getInt("account_transaction_id"),
-							rs.getString("event_address"),
-							rs.getString("event_title"),
-							rs.getString("event_desc"),
-							rs.getDate("event_expire_date"),
-							rs.getDate("event_publish_date"),
-							rs.getDate("event_time"),
-							rs.getString("event_type"),
-							rs.getString("event_photo"));
-					events.add(event);
-				}
 
 				
-				request.setAttribute("events", events);
+			List<Event> events = new ArrayList<Event>();
+			
+			//ResultSet studentTicket = stmt.executeQuery("SELECT ticket.price FROM ticket,event WHERE event.event_id = " + rs.getInt("event_id") + " AND event.event_id = ticket.event_id AND ticket.ticket_type = 'Student' ORDER BY ticket.ticket_id LIMIT 1");
+			//ResultSet nonStudentTicket = stmt.executeQuery("SELECT ticket.price FROM ticket,event WHERE event.event_id = " + rs.getInt("event_id") + " AND event.event_id = ticket.event_id AND ticket.ticket_type = 'Non-Student' ORDER BY ticket.ticket_id LIMIT 1");
+			
+			
+			while(rs.next()){
+				Event event = new Event(rs.getInt("event_id"),
+						rs.getInt("advertiser_id"),
+						rs.getInt("system_account_transaction_id"),
+						rs.getInt("account_transaction_id"),
+						rs.getString("event_address"),
+						rs.getString("event_title"),
+						rs.getString("event_desc"),
+						rs.getDate("event_expire_date"),
+						rs.getDate("event_publish_date"),
+						rs.getDate("event_time"),
+						rs.getString("event_type"),
+						rs.getString("event_photo"));
+				events.add(event);
 
-				
-				RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
-						.getRequestDispatcher("/events.jsp");
-				reqDispatcher.forward(request, response);
-
-			} else {
-				System.out.println("nope");
-				RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
-						.getRequestDispatcher("/index.jsp");
-				reqDispatcher.forward(request, response);
 			}
+
+			request.setAttribute("events", events);
+
+			
+			RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
+					.getRequestDispatcher("/events.jsp");
+			reqDispatcher.forward(request, response);
+
+
 			
 			
 			
