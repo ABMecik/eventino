@@ -31,6 +31,9 @@
 
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
+                	<li class="nav-link">
+                        <a class="btn btn-primary btn-block btn-login" href="events.jsp">Events</a>
+                    </li>
                 <%
 					response.setHeader("Cache-Control", "no-cach,no-store,must-revalidate");
 					if (session.getAttribute("username") == null) {
