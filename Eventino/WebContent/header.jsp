@@ -21,6 +21,7 @@
           <ul class="mob-ul">
              <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
              <li class="nav-item"><a class="nav-link" href="#">Events</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">My Profile</a></li>
              <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
              <li class="nav-item"><a class="nav-link" href="#">Register</a></li>
              
