@@ -27,11 +27,6 @@
 
 <link type="text/css" rel="stylesheet"href="resources/css/my_profile.css" />
 
-
-
-
-
-
 <script> 
 	$(function(){
 	  $("#header").load("header.jsp"); 
@@ -94,22 +89,22 @@
 								    	<div class="col-md-8 col-md-offset-2">
 								    	    <div class="panel panel-default ticket-list">
 								              <div class="panel-heading">
-								                <h3 class="panel-title text-center">Ticket</h3>
+								                <h3 class="panel-title text-center">Tickets</h3>
 								              </div>
 								              <div class="panel-body ">
 								                  <table class="table">
 								                    <thead class='table-head'>
 								                      <tr class='table-head'>
-								                        <th>TICKET TYPE</th>
+								                        <th>EVENT TITLE</th>
 								                        <th>PRICE</th>
-								                        <th>QUANTITY</th>
+								                        <th>EVENT EXPIRE DATE</th>
 								                      </tr>
 								                    </thead>
 								                    <tbody>
 								                      <tr>
-								                        <td>John</td>
-								                        <td>Doe</td>
-								                        <td>john@example.com</td>
+								                        <td>Zero to One</td>
+								                        <td>$15</td>
+								                        <td>2018-12-10</td>
 								                      </tr>
 								                      <tr>
 								                        <td>Mary</td>

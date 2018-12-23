@@ -89,7 +89,7 @@
 										 <h2 class="headline">Enter amount to load!</h2>
 										    <div class="row_acc">
 										      <div class="currency" data-currency="EUR">
-										        <input type="text" class="form-input" placeholder="Amount" name="load_action">
+										        <input type="number" class="form-input" placeholder="Amount" name="load_action">
 										      </div>
 										    </div> 
 										    <div class="row_acc">
@@ -100,7 +100,7 @@
 										 <h2 class="headline">Enter amount to withdraw!</h2>
 										    <div class="row_acc">
 										      <div class="currency" data-currency="EUR">
-										        <input type="text" class="form-input" placeholder="Amount" name="withdraw_action">
+										        <input type="number" class="form-input" placeholder="Amount" name="withdraw_action">
 										      </div>
 										    </div> 
 										    <div class="row_acc">
