@@ -18,7 +18,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 html { overflow-y: scroll; }
 body {
   font-family: Arial, Tahoma, sans-serif;
-  background: #000000;
+  background: url("../img/background.jpg") no-repeat center center;
   font-size: 62.5%;
   line-height: 1;
   padding-top: 40px;
