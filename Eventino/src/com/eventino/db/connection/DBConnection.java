@@ -10,7 +10,7 @@ public class DBConnection {
 		Connection con = null;
 		String url = "jdbc:mysql://localhost:3306/event_management";
 		String username = "root";
-		String password = "1234";
+		String password = "belmakays777";
 
 		try
 		{
