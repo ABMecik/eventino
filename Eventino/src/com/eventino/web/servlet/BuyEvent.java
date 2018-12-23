@@ -3,7 +3,6 @@ package com.eventino.web.servlet;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -15,19 +14,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.eventino.web.security.Sha512;
-
 /**
- * Servlet implementation class Register
+ * Servlet implementation class BuyEvent
  */
-@WebServlet("/Register")
-public class Register extends HttpServlet {
+@WebServlet("/BuyEvent")
+public class BuyEvent extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Register() {
+    public BuyEvent() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -47,46 +44,25 @@ public class Register extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 		
-		String username = request.getParameter("username");
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
-		String type = request.getParameter("account-type");
-		String phone = request.getParameter("phone");
-		
-		
-		Sha512 sha512 = new Sha512();
-		password = sha512.encrypt(password);
-		
+		String price = request.getParameter("price");
+		int rprice = Integer.valueOf(price)*-1;
+		price = "" + rprice;
 		
 		try {
+			HttpSession session = request.getSession();
+			
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/event_management", "root", "mysql123");
 			Statement stmt = conn.createStatement();
 			
-			int ks = stmt.executeUpdate("INSERT INTO user VALUES(null,'" + username + "','" + password + "','" + email + "','" + phone + "',null,'" + type + "')");
-			
-			ResultSet rs = stmt.executeQuery("SELECT id,username,user_type FROM user WHERE username='"+ username + "' and pass='" + password + "'");
-
-			
-			if (rs.next()) {
-				HttpSession session = request.getSession();
-				session.setAttribute("id", rs.getInt("id"));
-				session.setAttribute("username", rs.getString("username"));
-				session.setAttribute("user-type", rs.getString("user_type"));
-
-				
-				RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
-						.getRequestDispatcher("/index.jsp");
-				reqDispatcher.forward(request, response);
-
-			} else {
-				System.out.println("nope");
-				RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
-						.getRequestDispatcher("/index.jsp");
-				reqDispatcher.forward(request, response);
-			}
+			int usersID = (int) session.getAttribute("id");
 			
 			
+			int ks = stmt.executeUpdate("INSERT INTO account_transaction VALUES(null,null,'" + usersID + "','" + price + "',NOW(),'create-event')");
+			
+			RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
+					.getRequestDispatcher("/index.jsp");
+			reqDispatcher.forward(request, response);
 			
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -102,4 +78,5 @@ public class Register extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
+
 }

@@ -47,7 +47,7 @@ public class Login extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 		
-		String username = request.getParameter("username");
+		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		
 		Sha512 sha512 = new Sha512();
@@ -59,7 +59,7 @@ public class Login extends HttpServlet {
 			Statement stmt = conn.createStatement();
 			
 
-			ResultSet rs = stmt.executeQuery("SELECT id,username,user_type FROM user WHERE username='"+ username + "' and pass='" + password + "'");
+			ResultSet rs = stmt.executeQuery("SELECT id,username,user_type FROM user WHERE email='"+ email + "' and pass='" + password + "'");
 
 		
 			if (rs.next()) {
@@ -70,7 +70,7 @@ public class Login extends HttpServlet {
 
 				
 				RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
-						.getRequestDispatcher("/events.jsp");
+						.getRequestDispatcher("/index.jsp");
 				reqDispatcher.forward(request, response);
 
 			} else {

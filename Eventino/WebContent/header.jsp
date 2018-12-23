@@ -3,8 +3,8 @@
 
    <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <h3 class="my-heading ">MOJO<span class="bg-main">AVE</span></h3>
+            <a class="navbar-brand" href="index.jsp">
+                <h3 class="my-heading ">EVENT<span class="bg-main">INO</span></h3>
             </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="fa fa-bars mfa-white"></span>
@@ -41,16 +41,28 @@
                     <button class="btn btn-light"><i class="fa fa-search"></i></button>
                 </form>
                 <ul class="navbar-nav ml-auto">
+                <%
+					response.setHeader("Cache-Control", "no-cach,no-store,must-revalidate");
+					if (session.getAttribute("username") == null) {
+				%>
                     <li class="nav-link">
                         <a class="btn btn-primary btn-block btn-login" href="login.jsp">Login</a>
                     </li>
                     <li class="nav-link">
                         <a class="btn btn-primary btn-block btn-register" href="register.jsp">Register</a>
                     </li>
+                    <%
+					} else {
+				%>
+                    
                     <li class="nav-link">
-                        <button type = "submit" class = "btn btn-primary btn-block btn-login">Submit Button</button>
+                    <form class="form-inline" action="Logout">
+                        <button type = "submit" class = "btn btn-primary btn-block btn-login" value="Logout">Logout</button>
+                        </form>
                     </li>
-
+				<%
+					}
+				%>
                 </ul>
             </div>
 

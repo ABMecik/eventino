@@ -6,8 +6,7 @@
 <head>
 <title>Eventino</title>
 
-
-
+<!------ Bootstrap ---------->
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
@@ -16,15 +15,6 @@
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-
-
-<!------ Register Links ---------->
-<link
-	href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
-	rel="stylesheet" id="bootstrap-css">
-<script
-	src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 <!------ Include the above in your HEAD tag ---------->
 
@@ -45,31 +35,36 @@
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
+<link type="text/css" rel="stylesheet" href="resources/css/style.css" />
+
 <link type="text/css" rel="stylesheet" href="resources/css/register.css" />
 <script src="resources/js/register.js"></script>
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.js"
 	integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
 	crossorigin="anonymous">
-	
-</script>
+		
+	</script>
 <script>
-	$(function() {
-		$("#header").load("header.jsp");
-		$("#footer").load("footer.jsp");
-	});
-</script>
+		$(function() {
+			$("#header").load("header.jsp");
+			$("#footer").load("footer.jsp");
+		});
+	</script>
 
 </head>
 
 <body>
+	<div id="header"></div>
+
 
 	<div class="container">
 
 		<div class="row">
 			<div
 				class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-				<form role="form">
+				<form role="form" name="regForm" id="register-form" action="Register" method="POST">
 					<h2>
 						Please Sign Up <small>It's free and always will be.</small>
 					</h2>
@@ -88,14 +83,13 @@
 							class="form-control input-lg" placeholder="Phone" tabindex="3">
 					</div>
 					<div class="form-group">
-						<div class="form-control input-lg">
-							<div class="styled-select blue semi-square">
-							  <select name="account-type" tabindex="4">
-							    <option disabled="disabled" selected="selected">Account Type</option>
-		                        <option>Participant</option>
-		                        <option>Advertiser</option>
-							  </select>
-							 </div>
+						<div class="dropdown">
+							<select name="account-type" class="dropdown-select-version select" tabindex="4">
+								<option disabled="disabled" selected="selected">Account
+									Type</option>
+								<option>Participant</option>
+								<option>Advertiser</option>
+							</select>
 						</div>
 					</div>
 					<div class="row">
@@ -193,6 +187,10 @@
 			<!-- /.modal-dialog -->
 		</div>
 		<!-- /.modal -->
+	</div>
+
+	<div id="ffot">
+		<div id="footer"></div>
 	</div>
 </body>
 </html>

@@ -8,11 +8,8 @@
 
     <title>Eventino</title>
     
-	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	
-	<!------ Market Links ---------->
+
+	<!------ Bootstrap ---------->
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -322,7 +319,22 @@
 					<li>Publish an Event up to 1 month</li>
 					<li>No Support</li>
                 </ul>
-                <button type="button" class="btn btn-outline-secondary mb-3">Order now</button>
+                <%
+					if (session.getAttribute("username") == null) {
+						
+				%>
+                <button type="button" class="btn btn-outline-secondary mb-3" disabled>Order now</button>
+                <%
+					}
+					else{
+           				%>
+           				<form role="form" name="buyEvent" id="BuyEvent" method="POST" action="BuyEvent">
+           					<input type="hidden" name="price" id="price" value=10>
+           					<button type="submit" class="btn btn-outline-secondary mb-3">Order now</button>
+           				</form>
+           				<%
+                	}
+				%>
             </div>
         </div>
         <div class="card card-pricing popular shadow text-center px-3 mb-4">
@@ -332,11 +344,26 @@
             </div>
             <div class="card-body pt-0">
                 <ul class="list-unstyled mb-4">
-                    <li>Publish 2 Events</li>
+                    <li>Publish 1 Events</li>
 					<li>Publish Events up to 3 months</li>
 					<li>Limited Support</li>
                 </ul>
-                <a href="https://www.totoprayogo.com" target="_blank" class="btn btn-primary mb-3">Order Now</a>
+                <%
+					if (session.getAttribute("username") == null) {
+						
+				%>
+                <button type="button" class="btn btn-outline-secondary mb-3" disabled>Order now</button>
+                <%
+					}
+					else{
+           				%>
+           				<form role="form" name="buyEvent" id="BuyEvent" method="POST" action="BuyEvent">
+           					<input type="hidden" name="price" id="price" value=18>
+           					<button type="submit" class="btn btn-outline-secondary mb-3">Order now</button>
+           				</form>
+           				<%
+                	}
+				%>
             </div>
         </div>
         <div class="card card-pricing text-center px-3 mb-4">
@@ -346,11 +373,26 @@
             </div>
             <div class="card-body pt-0">
                 <ul class="list-unstyled mb-4">
-                    <li>Publish 4 Events</li>
+                    <li>Publish 1 Events</li>
 					<li>Publish Events up to 6 months</li>
 					<li>UnlimitedSupport</li>
                 </ul>
-                <button type="button" class="btn btn-outline-secondary mb-3">Order now</button>
+                <%
+					if (session.getAttribute("username") == null) {
+						
+				%>
+                <button type="button" class="btn btn-outline-secondary mb-3" disabled>Order now</button>
+                <%
+					}
+					else{
+           				%>
+           				<form role="form" name="buyEvent" id="BuyEvent" method="POST" action="BuyEvent">
+           					<input type="hidden" name="price" id="price" value=35>
+           					<button type="submit" class="btn btn-outline-secondary mb-3">Order now</button>
+           				</form>
+           				<%
+                	}
+				%>
             </div>
         </div>
     </div>
