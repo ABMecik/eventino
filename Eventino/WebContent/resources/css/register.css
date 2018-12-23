@@ -147,6 +147,7 @@ select#soflow-color {
 }
 
 #ffot{
+   margin-top:10px;
    position:absolute;
    bottom:0;
    width:100%;

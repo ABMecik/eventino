@@ -55,7 +55,7 @@ public class Login extends HttpServlet {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/event_management", "root", "belmakays777");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/event_management", "root", "mysql123");
 			Statement stmt = conn.createStatement();
 			
 

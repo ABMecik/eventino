@@ -327,12 +327,14 @@
                 <%
 					}
 					else{
+						if (session.getAttribute("user-type").equals("Advertiser")) {
            				%>
            				<form role="form" name="buyEvent" id="BuyEvent" method="POST" action="BuyEvent">
            					<input type="hidden" name="price" id="price" value=10>
            					<button type="submit" class="btn btn-outline-secondary mb-3">Order now</button>
            				</form>
            				<%
+						}
                 	}
 				%>
             </div>
@@ -356,12 +358,14 @@
                 <%
 					}
 					else{
+						if (session.getAttribute("user-type").equals("Advertiser")) {
            				%>
            				<form role="form" name="buyEvent" id="BuyEvent" method="POST" action="BuyEvent">
-           					<input type="hidden" name="price" id="price" value=18>
+           					<input type="hidden" name="price" id="price" value=10>
            					<button type="submit" class="btn btn-outline-secondary mb-3">Order now</button>
            				</form>
            				<%
+						}
                 	}
 				%>
             </div>
@@ -385,12 +389,14 @@
                 <%
 					}
 					else{
+						if (session.getAttribute("user-type").equals("Advertiser")) {
            				%>
            				<form role="form" name="buyEvent" id="BuyEvent" method="POST" action="BuyEvent">
-           					<input type="hidden" name="price" id="price" value=35>
+           					<input type="hidden" name="price" id="price" value=10>
            					<button type="submit" class="btn btn-outline-secondary mb-3">Order now</button>
            				</form>
            				<%
+						}
                 	}
 				%>
             </div>
