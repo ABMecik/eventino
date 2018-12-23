@@ -172,20 +172,24 @@
 									</div>
 									<br>
 								</div>
+								
+								<div class="form-group">
+									<input type="hidden" value="${event.getEvent_id()}" name="eventID" id="eventID">
+								</div>
 
 								<%
 									}
 										}
-									}
 								%>
-								<div class="form-group">
-								</div>
 								<div class="text-center">
 									<input type="submit" class="btn btn-lg btn-success btn-block"
 										value="Buy">
 								</div>
 							</fieldset>
 						</form>
+						<%
+									}
+						%>
 					</div>
 				</div>
 			</div>

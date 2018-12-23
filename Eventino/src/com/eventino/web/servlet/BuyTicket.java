@@ -47,6 +47,7 @@ public class BuyTicket extends HttpServlet {
 		doGet(request, response);
 		
 		String ticketType = request.getParameter("ticket-type");
+		String eventID = request.getParameter("eventID");
 		
 		try {
 			HttpSession session = request.getSession();
@@ -60,19 +61,48 @@ public class BuyTicket extends HttpServlet {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DBConnection.createConnection();
 			Statement stmt = conn.createStatement();
+			ResultSet rs = null;
 			
-			int usersID = (int) session.getAttribute("id");
+			int userID = (int) session.getAttribute("id");
 			
-			ResultSet rs = stmt.executeQuery("SELECT SUM(account_transaction.amount) AS user_balance FROM account_transaction WHERE account_transaction.user_id = '" + usersID +"'");
+			rs = stmt.executeQuery("SELECT SUM(account_transaction.amount) AS user_balance FROM account_transaction WHERE account_transaction.user_id = '" + userID +"'");
+			Double userBalance = null;
 			if(rs.next()) {
-				System.out.println(rs.getInt("user_balance"));
+				userBalance = rs.getDouble("user_balance");
 			}
+			rs.close();
 			
+			System.out.println("e id" + eventID);
+			System.out.println("t t" + ticketType);
 			
-			
-			RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
-					.getRequestDispatcher("/index.jsp");
-			reqDispatcher.forward(request, response);
+			rs = stmt.executeQuery("SELECT ticket_id,price FROM ticket WHERE ticket.event_id='"+eventID+"' AND ticket.ticket_type='"+ticketType+"' AND ticket.participant_id is null");
+			if(rs.next()) {
+				Double seatPrice = rs.getDouble("price");
+				int ticketID = rs.getInt("ticket_id");
+				if(seatPrice<userBalance) {
+					int ks = stmt.executeUpdate("UPDATE ticket SET ticket.participant_id = '"+ userID +"', ticket.acquisition_date = NOW() WHERE ticket.ticket_id='"+ticketID+"'");
+					
+					request.setAttribute("success", "Ticket successfully received");
+					System.out.println("Ticket successfully received");
+					RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
+							.getRequestDispatcher("/index.jsp");
+					reqDispatcher.forward(request, response);
+					
+				}else {
+					request.setAttribute("error", "Not enough money");
+					System.out.println("Not enough money");
+					RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
+							.getRequestDispatcher("/index.jsp");
+					reqDispatcher.forward(request, response);
+				}
+			}else {
+				request.setAttribute("error", "No empty seats");
+				System.out.println("No empty seats");
+				RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
+						.getRequestDispatcher("/index.jsp");
+				reqDispatcher.forward(request, response);
+			}
+
 
 			
 			
