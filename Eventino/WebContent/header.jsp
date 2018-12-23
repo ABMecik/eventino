@@ -39,9 +39,6 @@
 					response.setHeader("Cache-Control", "no-cach,no-store,must-revalidate");
 					if (session.getAttribute("username") == null) {
 				%>
-					<li class="nav-link">
-                        <a class="btn btn-primary btn-block btn-login" href="my_profile.jsp">My Profile</a>
-                    </li>
                     <li class="nav-link">
                         <a class="btn btn-primary btn-block btn-login" href="login.jsp">Login</a>
                     </li>
@@ -52,6 +49,9 @@
 					} else {
 				%>
                     
+                    <li class="nav-link">
+                        <a class="btn btn-primary btn-block btn-login" href="my_profile.jsp">My Profile</a>
+                    </li>
                     <li class="nav-link">
                     <form class="form-inline" action="Logout">
                         <button type = "submit" class = "btn btn-primary btn-block btn-login" value="Logout">Logout</button>

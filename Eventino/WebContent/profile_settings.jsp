@@ -10,6 +10,12 @@
 	href="resources/css/create_event.css">
 </head>
 <body>
+	<%
+		if (session.getAttribute("username") == null) {}
+		else{
+			if (session.getAttribute("user-type").equals("Participant")) {
+	%>
+
 	<div id="wrapper">
 		<h1>My Profile</h1>
 		<form name="CreatEventForm" id="creat-event-form" method="POST"
@@ -274,6 +280,9 @@
 			</div>
 		</form>
 	</div>
+	<%
+		} else if (session.getAttribute("user-type").equals("Advertiser")) {
+	%>
 	<div id="wrapper">
 		<form name="CreatEventForm" id="creat-event-form" method="POST"
 			action="AdvertiserProfile">
@@ -308,5 +317,10 @@
 			</div>
 		</form>
 	</div>
+	<%
+		}
+		}
+	%>
+
 </body>
 </html>
