@@ -38,6 +38,9 @@
 					response.setHeader("Cache-Control", "no-cach,no-store,must-revalidate");
 					if (session.getAttribute("username") == null) {
 				%>
+					<li class="nav-link">
+                        <a class="btn btn-primary btn-block btn-login" href="my_profile.jsp">My Profile</a>
+                    </li>
                     <li class="nav-link">
                         <a class="btn btn-primary btn-block btn-login" href="login.jsp">Login</a>
                     </li>
