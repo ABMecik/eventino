@@ -158,6 +158,7 @@
 					<div class="info">
 						<p>Balance: &nbsp&nbsp&nbsp ${balance}</p>
 						<%
+						
 							if (session.getAttribute("user-type").equals("Participant")) {
 						%>
 						<p>Tickets: &nbsp&nbsp&nbsp ${numberOfTicket}</p>

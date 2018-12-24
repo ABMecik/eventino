@@ -69,6 +69,7 @@
 					accept="image/gif, image/jpeg, image/png" tabindex="8">
 				</label>
 			</div>
+			<input type="hidden" value="">
 			<div class="col-submit">
 				<button class="submitbtn">Create Event</button>
 			</div>

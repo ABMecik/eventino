@@ -58,12 +58,7 @@ public class Myprofile extends HttpServlet {
 
 			ResultSet rs = null;
 
-			rs = stmt.executeQuery("SELECT SUM(account_transaction.amount) AS user_balance FROM account_transaction WHERE account_transaction.user_id = '" + userID +"'");
-			if(rs.next()) {
-				String balance = rs.getString("user_balance");
-				request.setAttribute("balance", balance);
-			}
-			rs.close();
+			
 			
 			
 			if(userType.equals("Advertiser")) {
@@ -84,6 +79,13 @@ public class Myprofile extends HttpServlet {
 				if(rs.next()) {
 					String numberOfEvent = rs.getString("number_of_event");
 					request.setAttribute("numberOfEvent", numberOfEvent);
+				}
+				rs.close();
+				
+				rs = stmt.executeQuery("SELECT SUM(account_transaction.amount) AS user_balance FROM account_transaction WHERE account_transaction.user_id = '" + userID +"'");
+				if(rs.next()) {
+					String balance = rs.getString("user_balance");
+					request.setAttribute("balance", balance);
 				}
 				rs.close();
 
@@ -112,6 +114,13 @@ public class Myprofile extends HttpServlet {
 				if(rs.next()) {
 					String numberOfTicket = rs.getString("number_of_ticket");
 					request.setAttribute("numberOfTicket", numberOfTicket);
+				}
+				rs.close();
+				
+				rs = stmt.executeQuery("SELECT SUM(account_transaction.amount) AS user_balance FROM account_transaction WHERE account_transaction.user_id = '" + userID +"'");
+				if(rs.next()) {
+					String balance = rs.getString("user_balance");
+					request.setAttribute("balance", balance);
 				}
 				rs.close();
 				

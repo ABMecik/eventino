@@ -86,6 +86,7 @@ public class Mylist extends HttpServlet {
 				rs = stmt.executeQuery("SELECT event_id,event_title,event_publish_date,event_expire_date FROM event WHERE event.advertiser_id='"+userID+"'");
 				List<EventModel> events = new ArrayList<EventModel>();
 				while(rs.next()) {
+					
 					EventModel eventModel = new EventModel();
 					eventModel.setEvent_id(rs.getInt("event_id"));
 					eventModel.setEvent_title("event_title");
@@ -94,8 +95,9 @@ public class Mylist extends HttpServlet {
 					
 					events.add(eventModel);
 					
-					request.setAttribute("myevents", events);
+					
 				}
+				request.setAttribute("myevents", events);
 				rs.close();
 				
 				
