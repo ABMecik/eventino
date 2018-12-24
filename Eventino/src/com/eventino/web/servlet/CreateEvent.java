@@ -72,6 +72,10 @@ public class CreateEvent extends HttpServlet {
 
 		try {
 			HttpSession session = request.getSession();
+			int eventId = (int) session.getAttribute("eventId");
+			System.out.println(eventId);
+
+
 			if(session.getAttribute("id")==null) {
 				RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
 						.getRequestDispatcher("/index.jsp");
