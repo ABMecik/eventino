@@ -50,7 +50,7 @@
 				%>
                     
                     <li class="nav-link">
-                        <a class="btn btn-primary btn-block btn-login" href="my_profile.jsp">My Profile</a>
+                        <a class="btn btn-primary btn-block btn-login" href="/Eventino/Myprofile">My Profile</a>
                     </li>
                     <li class="nav-link">
                     <form class="form-inline" action="Logout">

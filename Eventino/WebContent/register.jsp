@@ -188,9 +188,5 @@
 		</div>
 		<!-- /.modal -->
 	</div>
-
-	<div id="ffot">
-		<div id="footer"></div>
-	</div>
 </body>
 </html>

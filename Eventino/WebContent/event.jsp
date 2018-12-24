@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@page import="com.eventino.web.model.EventModel"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -101,23 +102,9 @@
 							</h3>
 							<hr>
 							<h2>
-								<font color="purple"> <%
- 	if (session.getAttribute("username") == null) {
- %> ${ticketNSP}$ <%
- 	} else {
- 		if (session.getAttribute("user-type").equals("Participant")) {
-
- 			if (session.getAttribute("participant-type").equals("Student")) {
- %> ${ticketSP}$ <%
- 	} else {
- %> ${ticketNSP}$ <%
- 	}
-
- 		} else {
- %> Student : ${ticketSP}$ Normal : ${ticketNSP}$ <%
- 	}
- 	}
- %>
+								<font color="purple">
+Student : ${ticketSP}$ <br>
+Normal : ${ticketNSP}$
 							</h2>
 							</font>
 						</div>
@@ -142,6 +129,7 @@
 									<div class="form-group">
 										<span class="input-group-addon"> <select id="ticket-type"
 											name='ticket-type' class="form-control" name="size">
+												<option>Normal</option>
 												<option>Student</option>
 												<option>Free Request</option>
 
@@ -173,14 +161,14 @@
 									<br>
 								</div>
 								
-								<div class="form-group">
-									<input type="hidden" value="${event.getEvent_id()}" name="eventID" id="eventID">
-								</div>
-
 								<%
 									}
 										}
 								%>
+								
+								<div class="form-group">
+									<input type="hidden" name="event-id" id="event-id" value="${event.getEvent_id()}">
+								</div>
 								<div class="text-center">
 									<input type="submit" class="btn btn-lg btn-success btn-block"
 										value="Buy">

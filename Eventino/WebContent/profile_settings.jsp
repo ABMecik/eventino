@@ -3,7 +3,6 @@
 <%@page import="com.eventino.web.model.ParticipantModel"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page import="com.eventino.web.model.AdvertiserModel"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
 <html lang="en-US">
 <head>

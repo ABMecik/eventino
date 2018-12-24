@@ -42,7 +42,22 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" class="avatar" alt="profile_pic"/>
+                            <%
+							if (session.getAttribute("username") == null) {
+							} else {
+								if (session.getAttribute("user-type").equals("Participant")) {
+						%>
+						<img src="${participantModel.getProfile_picture()}" class="avatar"
+							alt="profile_pic" />
+						<%
+							} else if (session.getAttribute("user-type").equals("Advertiser")) {
+						%>
+						<img src="${advertiserModel.getLogo()}" class="avatar"
+							alt="profile_pic" />
+						<%
+							}
+							}
+						%>
                             <div class="file btn btn-lg btn-primary">
                                 Change Photo
                                 <input type="file" name="file" class="file-upload"/>
@@ -51,20 +66,54 @@
                     </div>
                     <div class="col-md-6">
                         <div class="profile-head">
-                                    <h4>
-                                        Account Transaction
-                                    </h4>
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link" id="home-tab" data-toggle="tab" href="my_profile.jsp" role="tab" aria-controls="home" aria-selected="false">Profile Information</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="my_tickets.jsp" role="tab" aria-controls="profile" aria-selected="false">My Tickets</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="transaction-tab" data-toggle="tab" href="account_transaction.jsp" role="tab" aria-controls="transaction" aria-selected="true">Account Transaction</a>
-                                </li>
-                            </ul>
+                           <%
+							if (session.getAttribute("username") == null) {
+							} else {
+								if (session.getAttribute("user-type").equals("Participant")) {
+						%>
+					
+						<h4>Account Transaction</h4>
+						<ul class="nav nav-tabs" id="myTab" role="tablist">
+							<li class="nav-item"><a class="nav-link active"
+								id="home-tab" data-toggle="tab" href="/Eventino/Myprofile"
+								role="tab" aria-controls="home" aria-selected="true">Profile
+									Information</a></li>
+
+							<li class="nav-item"><a class="nav-link" id="profile-tab"
+								data-toggle="tab" href="/Eventino/Mylist" role="tab"
+								aria-controls="profile" aria-selected="false">My Tickets</a></li>
+
+							<li class="nav-item"><a class="nav-link"
+								id="transaction-tab" data-toggle="tab"
+								href="/Eventino/Myaccount" role="tab"
+								aria-controls="transaction" aria-selected="false">Account
+									Transaction</a></li>
+						</ul>
+						<%
+							} else if (session.getAttribute("user-type").equals("Advertiser")) {
+						%>
+						<h4>Account Transaction</h4>
+						<ul class="nav nav-tabs" id="myTab" role="tablist">
+							<li class="nav-item"><a class="nav-link active"
+								id="home-tab" data-toggle="tab" href="/Eventino/Myprofile"
+								role="tab" aria-controls="home" aria-selected="true">Profile
+									Information</a></li>
+
+							<li class="nav-item"><a class="nav-link" id="profile-tab"
+								data-toggle="tab" href="/Eventino/Mylist" role="tab"
+								aria-controls="profile" aria-selected="false">My Events</a></li>
+
+							<li class="nav-item"><a class="nav-link"
+								id="transaction-tab" data-toggle="tab"
+								href="/Eventino/Myaccount" role="tab"
+								aria-controls="transaction" aria-selected="false">Account
+									Transaction</a></li>
+						</ul>
+						
+						<%
+							}
+							}
+						%>
                         </div>
                     </div>
                     <div class="col-md-2">
@@ -75,11 +124,27 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4">
-                    	<div class="info">
-                            <p>Balance: &nbsp&nbsp&nbsp Balance</p><br/>
-                            <p>Events: &nbsp&nbsp&nbsp EventCount</p><br/>
-                            <p>Tickets: &nbsp&nbsp&nbsp TicketCount</p>
-                    	</div>
+                    	<%
+					if(session.getAttribute("username")==null){}
+					else{
+					%>
+					<div class="info">
+						<p>Balance: &nbsp&nbsp&nbsp ${balance}</p>
+						<%
+						if (session.getAttribute("user-type").equals("Participant")){
+						%>
+						<p>Tickets: &nbsp&nbsp&nbsp ${numberOfTicket}</p>
+						<%
+						}else if(session.getAttribute("user-type").equals("Advertiser")){
+						%>
+						<p>Events: &nbsp&nbsp&nbsp ${numberOfEvent}</p>
+						<%
+						}
+						%>
+					</div>
+					<%
+					}
+					%>
                     </div>
                     <div class="col-md-8">
                         <div class="tab-content profile-tab" id="myTabContent">
@@ -89,7 +154,7 @@
 										 <h2 class="headline">Enter amount to load!</h2>
 										    <div class="row_acc">
 										      <div class="currency" data-currency="EUR">
-										        <input type="number" class="form-input" placeholder="Amount" name="load_action">
+										        <input type="number" class="form-input" placeholder="Amount" name="load_action" min="0">
 										      </div>
 										    </div> 
 										    <div class="row_acc">
@@ -100,7 +165,7 @@
 										 <h2 class="headline">Enter amount to withdraw!</h2>
 										    <div class="row_acc">
 										      <div class="currency" data-currency="EUR">
-										        <input type="number" class="form-input" placeholder="Amount" name="withdraw_action">
+										        <input type="number" class="form-input" placeholder="Amount" name="withdraw_action" min="0">
 										      </div>
 										    </div> 
 										    <div class="row_acc">

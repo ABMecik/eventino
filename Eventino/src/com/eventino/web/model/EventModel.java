@@ -5,7 +5,7 @@ import java.util.Date;
 public class EventModel {
 
 	private int event_id;
-	private int advertiser;
+	private int advertiser_id;
 	private int system_account_transaction_id;
 	private int account_transaction_id;
 	private String event_address;
@@ -25,7 +25,7 @@ public class EventModel {
 			String event_title) {
 		super();
 		this.event_id = event_id;
-		this.advertiser = advertiser;
+		this.advertiser_id = advertiser;
 		this.system_account_transaction_id = system_account_transaction_id;
 		this.account_transaction_id = account_transaction_id;
 		this.event_title = event_title;
@@ -33,7 +33,7 @@ public class EventModel {
 	public EventModel(int advertiser, String event_address, String event_title, String event_desc, Date event_expire_date,
 			Date event_publish_date, Date event_time, String event_type, String event_photo) {
 		super();
-		this.advertiser = advertiser;
+		this.advertiser_id = advertiser;
 		this.event_address = event_address;
 		this.event_title = event_title;
 		this.event_desc = event_desc;
@@ -47,7 +47,7 @@ public class EventModel {
 			Date event_expire_date, Date event_publish_date, Date event_time, String event_type, String event_photo) {
 		super();
 		this.event_id = event_id;
-		this.advertiser = advertiser;
+		this.advertiser_id = advertiser;
 		this.event_address = event_address;
 		this.event_title = event_title;
 		this.event_desc = event_desc;
@@ -62,7 +62,7 @@ public class EventModel {
 			Date event_publish_date, Date event_time, String event_type, String event_photo) {
 		super();
 		this.event_id = event_id;
-		this.advertiser = advertiser;
+		this.advertiser_id = advertiser;
 		this.system_account_transaction_id = system_account_transaction_id;
 		this.account_transaction_id = account_transaction_id;
 		this.event_address = event_address;
@@ -78,7 +78,7 @@ public class EventModel {
 			String event_title, String event_desc, Date event_expire_date, Date event_publish_date, Date event_time,
 			String event_type, String event_photo) {
 		super();
-		this.advertiser = advertiser;
+		this.advertiser_id = advertiser;
 		this.system_account_transaction_id = system_account_transaction_id;
 		this.account_transaction_id = account_transaction_id;
 		this.event_address = event_address;
@@ -92,7 +92,7 @@ public class EventModel {
 	}
 	@Override
 	public String toString() {
-		return "event [event_id=" + event_id + ", advertiser=" + advertiser + ", system_account_transaction_id="
+		return "event [event_id=" + event_id + ", advertiser=" + advertiser_id + ", system_account_transaction_id="
 				+ system_account_transaction_id + ", account_transaction_id=" + account_transaction_id
 				+ ", event_address=" + event_address + ", event_title=" + event_title + ", event_desc=" + event_desc
 				+ ", event_expire_date=" + event_expire_date + ", event_publish_date=" + event_publish_date
@@ -104,11 +104,11 @@ public class EventModel {
 	public void setEvent_id(int event_id) {
 		this.event_id = event_id;
 	}
-	public int getAdvertiser() {
-		return advertiser;
+	public int getAdvertiser_id() {
+		return advertiser_id;
 	}
-	public void setAdvertiser(int advertiser) {
-		this.advertiser = advertiser;
+	public void setAdvertiser_id(int advertiser_id) {
+		this.advertiser_id = advertiser_id;
 	}
 	public int getSystem_account_transaction_id() {
 		return system_account_transaction_id;
