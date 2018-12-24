@@ -12,7 +12,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.eventino.db.connection.DBConnection;
 import com.eventino.web.model.EventModel;
@@ -54,13 +53,10 @@ public class Event extends HttpServlet {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DBConnection.createConnection();
-			Statement stmt = conn.createStatement();		
+			Statement stmt = conn.createStatement();
 
 			ResultSet event = stmt.executeQuery("SELECT * FROM event WHERE event_id='"+ eventID + "'");
 			if(event.next()) {
-				HttpSession session = request.getSession();
-				session.setAttribute("eventId", event.getInt("event_id"));
-				
 				EventModel eventInfo = new EventModel(event.getInt("event_id"),
 						event.getInt("advertiser_id"),
 						event.getInt("system_account_transaction_id"),
