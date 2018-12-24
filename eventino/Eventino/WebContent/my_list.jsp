@@ -204,10 +204,11 @@
 														<table class="table">
 															<thead class='table-head'>
 																<tr class='table-head'>
+																	<th>EVENT ID</th>
 																	<th>EVENT TITLE</th>
-																	<th>TICKET TYPE</th>
-																	<th>EVENT DATE</th>
-																	<th>TICKET PRICE</th>
+																	<th>PUBLISH DATE</th>
+																	<th>EXPIRE DATE</th>
+																	<th>SET EVENT</th>
 																</tr>
 															</thead>
 															<tbody>
@@ -215,125 +216,231 @@
 
 																<%
 																	}
-																	}
-																%>
-
-																<%
-																	if (session.getAttribute("username") == null) {
-																	} else {
 																		if (session.getAttribute("user-type").equals("Participant")) {
-																			
+
 																			List<EventModel> eventList = (ArrayList<EventModel>) request.getAttribute("events");
 																			List<TicketModel> ticketList = (ArrayList<TicketModel>) request.getAttribute("tickets");
+
 																			if (!eventList.isEmpty()) {
-																				if(!ticketList.isEmpty()){
-																					for(int i=0; i<eventList.size(); i++){
-																				
+																				if (!ticketList.isEmpty()) {
+																					for (int i = 0; i < eventList.size(); i++) {
 																%>
 																<tr>
-																	<td><%out.print(eventList.get(i).getEvent_title()); %></td>
-																	<td><%out.print(ticketList.get(i).getTicket_type()); %></td>
-																	<td><%out.print(eventList.get(i).getEvent_time()); %></td>
-																	<td><%out.print(ticketList.get(i).getPrice()); %></td>
+																	<td>
+																		<%
+																			out.print(eventList.get(i).getEvent_title());
+																		%>
+																	</td>
+																	<td>
+																		<%
+																			out.print(ticketList.get(i).getTicket_type());
+																		%>
+																	</td>
+																	<td>
+																		<%
+																			out.print(eventList.get(i).getEvent_time());
+																		%>
+																	</td>
+																	<td>
+																		<%
+																			out.print(ticketList.get(i).getPrice());
+																		%>
+																	</td>
 																</tr>
 
 																<%
-																					}
+																	}
 																				}
 																			}
-																	} else if (session.getAttribute("user-type").equals("Advertiser")) {
+																		} else if (session.getAttribute("user-type").equals("Advertiser")) {
+
+																			List<EventModel> myEventList = (ArrayList<EventModel>) request.getAttribute("myevents");
+
+																			if (!myEventList.isEmpty()) {
+																				for (EventModel curEvent : myEventList) {
 																%>
+
+																<tr>
+																	<td>
+																		<%
+																			out.print(curEvent.getEvent_id());
+																		%>
+																	</td>
+																	<td>
+																		<%
+																			out.print(curEvent.getEvent_title());
+																		%>
+																	</td>
+																	<td>
+																		<%
+																			out.print(curEvent.getEvent_publish_date());
+																		%>
+																	</td>
+																	<td>
+																		<%
+																			out.print(curEvent.getEvent_expire_date());
+																		%>
+																	</td>
+																	<td>
+																		<form role="form" name="setEvent" id="setEvent"
+																			method="POST" action="SetEvent">
+																			<fieldset>
+
+																				<div class="form-group">
+																					<input type="hidden" name="event-id" id="event-id"
+																						value="${curEvent.getEvent_id()}">
+																				</div>
+
+																				<div class="text-center">
+																					<input type="submit"
+																						class="btn btn-lg btn-success btn-block"
+																						value="Edit">
+																				</div>
+																			</fieldset>
+																		</form>
+																	</td>
+																</tr>
 
 
 																<%
 																	}
+																			}
+																		}
 																	}
 																%>
 
 															</tbody>
 														</table>
 													</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-		</form>
-	</div>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-	<script>
-		new WOW().init();
-	</script>
-	<script>
-		$(window).scroll(function() {
+													</div>
+													</div>
+													</div>
+													</div>
+													</div>
+													</div>
+													</div>
+													</form>
+													</div>
+													<script
+														src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+													<script>
+														new WOW().init();
+													</script>
+													<script>
+														$(window)
+																.scroll(
+																		function() {
 
-			var topWindow = $(window).scrollTop();
-			var topWindow = topWindow * 1.5;
-			var windowHeight = $(window).height();
-			var position = topWindow / windowHeight;
-			position = 1 - position;
+																			var topWindow = $(
+																					window)
+																					.scrollTop();
+																			var topWindow = topWindow * 1.5;
+																			var windowHeight = $(
+																					window)
+																					.height();
+																			var position = topWindow
+																					/ windowHeight;
+																			position = 1 - position;
 
-			$('#bottom').css('opacity', position);
+																			$(
+																					'#bottom')
+																					.css(
+																							'opacity',
+																							position);
 
-		});
+																		});
 
-		function openNav() {
-			document.getElementById("mySidenav").style.width = "250px";
-			document.getElementById("main").style.display = "0";
-			document.body.style.backgroundColor = "white";
-		}
+														function openNav() {
+															document
+																	.getElementById("mySidenav").style.width = "250px";
+															document
+																	.getElementById("main").style.display = "0";
+															document.body.style.backgroundColor = "white";
+														}
 
-		function closeNav() {
-			document.getElementById("mySidenav").style.width = "0";
-			document.getElementById("main").style.marginRight = "0";
-			document.body.style.backgroundColor = "white";
-		}
+														function closeNav() {
+															document
+																	.getElementById("mySidenav").style.width = "0";
+															document
+																	.getElementById("main").style.marginRight = "0";
+															document.body.style.backgroundColor = "white";
+														}
 
-		$(window).on("scroll", function() {
-			if ($(this).scrollTop() > 10) {
-				$("nav.navbar").addClass("mybg-dark");
-				$("nav.navbar").addClass("navbar-shrink");
+														$(window)
+																.on(
+																		"scroll",
+																		function() {
+																			if ($(
+																					this)
+																					.scrollTop() > 10) {
+																				$(
+																						"nav.navbar")
+																						.addClass(
+																								"mybg-dark");
+																				$(
+																						"nav.navbar")
+																						.addClass(
+																								"navbar-shrink");
 
-			} else {
-				$("nav.navbar").removeClass("mybg-dark");
-				$("nav.navbar").removeClass("navbar-shrink");
+																			} else {
+																				$(
+																						"nav.navbar")
+																						.removeClass(
+																								"mybg-dark");
+																				$(
+																						"nav.navbar")
+																						.removeClass(
+																								"navbar-shrink");
 
-			}
+																			}
 
-		});
+																		});
 
-		$(function() {
-			$('#bottom')
-					.click(
-							function() {
-								if (location.pathname.replace(/^\//, '') == this.pathname
-										.replace(/^\//, '')
-										&& location.hostname == this.hostname) {
-									var target = $(this.hash);
-									target = target.length ? target
-											: $('[name=' + this.hash.slice(1)
-													+ ']');
-									if (target.length) {
-										$('html,body').animate({
-											scrollTop : target.offset().top
-										}, 500);
-										return false;
-									}
-								}
-							});
-		});
-	</script>
-	<script>
-		$(document).ready(function() {
-			$(".fancybox").fancybox({
-				openEffect : "none",
-				closeEffect : "none"
-			});
-		});
-	</script>
-
+														$(function() {
+															$('#bottom')
+																	.click(
+																			function() {
+																				if (location.pathname
+																						.replace(
+																								/^\//,
+																								'') == this.pathname
+																						.replace(
+																								/^\//,
+																								'')
+																						&& location.hostname == this.hostname) {
+																					var target = $(this.hash);
+																					target = target.length ? target
+																							: $('[name='
+																									+ this.hash
+																											.slice(1)
+																									+ ']');
+																					if (target.length) {
+																						$(
+																								'html,body')
+																								.animate(
+																										{
+																											scrollTop : target
+																													.offset().top
+																										},
+																										500);
+																						return false;
+																					}
+																				}
+																			});
+														});
+													</script>
+													<script>
+														$(document)
+																.ready(
+																		function() {
+																			$(
+																					".fancybox")
+																					.fancybox(
+																							{
+																								openEffect : "none",
+																								closeEffect : "none"
+																							});
+																		});
+													</script>
 </body>
 </html>

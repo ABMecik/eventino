@@ -82,7 +82,7 @@ public class Login extends HttpServlet {
 					rs1.close();
 				}
 				else if(aTp.equals("Advertiser")) {
-					ResultSet rs1 = stmt.executeQuery("SELECT advertiser_type FROM advertiser WHERE participant_id='"+ userID + "'");
+					ResultSet rs1 = stmt.executeQuery("SELECT advertiser_type FROM advertiser WHERE advertiser_id='"+ userID + "'");
 					if(rs1.next()) {
 						session.setAttribute("advertiser-type", rs1.getString("advertiser_type"));
 					}

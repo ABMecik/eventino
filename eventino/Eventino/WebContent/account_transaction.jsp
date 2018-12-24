@@ -9,22 +9,38 @@
 <meta charset="ISO-8859-1">
 <title>Account Transaction</title>
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
-<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
-	 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" />
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-	<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-	
-	<link type="text/css" rel="stylesheet"href="resources/css/style.css" />
-	<link type="text/css" rel="stylesheet"href="resources/css/my_profile.css" />
-	<link type="text/css" rel="stylesheet"href="resources/css/account_transaction.css" />
-	<script src="resources/js/account_transaction.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Kaushan+Script"
+	rel="stylesheet">
+<link
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	rel="stylesheet"
+	integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" />
+<link rel="stylesheet"
+	href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+	media="screen">
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+<link type="text/css" rel="stylesheet" href="resources/css/style.css" />
+<link type="text/css" rel="stylesheet"
+	href="resources/css/my_profile.css" />
+<link type="text/css" rel="stylesheet"
+	href="resources/css/account_transaction.css" />
+<script src="resources/js/account_transaction.js"></script>
 
 <script> 
 	$(function(){
@@ -37,12 +53,12 @@
 <body>
 
 	<div id="header"></div>
-<div class="container emp-profile">
-            <form method="post">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="profile-img">
-                            <%
+	<div class="container emp-profile">
+		<form method="post">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="profile-img">
+						<%
 							if (session.getAttribute("username") == null) {
 							} else {
 								if (session.getAttribute("user-type").equals("Participant")) {
@@ -58,20 +74,19 @@
 							}
 							}
 						%>
-                            <div class="file btn btn-lg btn-primary">
-                                Change Photo
-                                <input type="file" name="file" class="file-upload"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="profile-head">
-                           <%
+						<div class="file btn btn-lg btn-primary">
+							Change Photo <input type="file" name="file" class="file-upload" />
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="profile-head">
+						<%
 							if (session.getAttribute("username") == null) {
 							} else {
 								if (session.getAttribute("user-type").equals("Participant")) {
 						%>
-					
+
 						<h4>Account Transaction</h4>
 						<ul class="nav nav-tabs" id="myTab" role="tablist">
 							<li class="nav-item"><a class="nav-link active"
@@ -109,22 +124,23 @@
 								aria-controls="transaction" aria-selected="false">Account
 									Transaction</a></li>
 						</ul>
-						
+
 						<%
 							}
 							}
 						%>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-	                    <div class="prf-set-btn">
-	                         <a id="settings-tab" href="profile_settings.jsp">Profile Settings</a>
-	                    </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                    	<%
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="prf-set-btn">
+						<a id="settings-tab" href="profile_settings.jsp">Profile
+							Settings</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<%
 					if(session.getAttribute("username")==null){}
 					else{
 					%>
@@ -145,40 +161,64 @@
 					<%
 					}
 					%>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="tab-content profile-tab" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="transaction-tab">
-                                        <div class="row">
+				</div>
+				<div class="col-md-8">
+					<div class="tab-content profile-tab" id="myTabContent">
+						<div class="tab-pane fade show active" id="home" role="tabpanel"
+							aria-labelledby="transaction-tab">
+							<div class="row">
+
+								<form role="form" name="addBalance" id="addBalance"
+									method="POST" action="Myaccount">
+									<fieldset>
 										<div class="card">
-										 <h2 class="headline">Enter amount to load!</h2>
-										    <div class="row_acc">
-										      <div class="currency" data-currency="EUR">
-										        <input type="number" class="form-input" placeholder="Amount" name="load_action" min="0">
-										      </div>
-										    </div> 
-										    <div class="row_acc">
-										      <input type="submit" id="submit" class="button" value="Load">
-										    </div>
-										</div><!-- /.card -->
+											<h2 class="headline">Enter amount to load!</h2>
+											<div class="row_acc">
+												<div class="currency" data-currency="EUR"><div class="form-group">
+													<input type="number" class="form-input"
+														placeholder="Amount" name="amount" min="0"></div>
+														<div class="form-group">
+														<input type="hidden" name="transactionType" value="load">
+														</div>
+												</div>
+											</div>
+											<div class="row_acc">
+												<input type="submit" id="submit" class="button" value="Load">
+											</div>
+										</div>
+									</fieldset>
+								</form>
+
+								<!-- /.card -->
+								<form role="form" name="addBalance" id="addBalance"
+									method="POST" action="Myaccount">
+									<fieldset>
 										<div class="card">
-										 <h2 class="headline">Enter amount to withdraw!</h2>
-										    <div class="row_acc">
-										      <div class="currency" data-currency="EUR">
-										        <input type="number" class="form-input" placeholder="Amount" name="withdraw_action" min="0">
-										      </div>
-										    </div> 
-										    <div class="row_acc">
-										      <input type="submit" id="submit" class="button" value="Withdraw">
-										    </div>
-										</div><!-- /.card -->
-								</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>           
-        </div>
+											<h2 class="headline">Enter amount to withdraw!</h2>
+											<div class="row_acc">
+												<div class="currency" data-currency="EUR"><div class="form-group">
+													<input type="number" class="form-input"
+														placeholder="Amount" name="amount" min="0"></div>
+														<div class="form-group">
+														<input type="hidden" name="transactionType" value="withdraw">
+														</div>
+												</div>
+											</div>
+											<div class="row_acc">
+												<input type="submit" id="submit" class="button"
+													value="Withdraw">
+											</div>
+										</div>
+									</fieldset>
+								</form>
+								<!-- /.card -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 	<script>

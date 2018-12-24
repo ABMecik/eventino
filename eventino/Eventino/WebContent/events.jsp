@@ -84,7 +84,6 @@
 					if (!eventList.isEmpty()) {
 						for (EventModel event : eventList) {
 				%>
-				}
 
 
 				<div class="item col-xs-4 col-lg-4">

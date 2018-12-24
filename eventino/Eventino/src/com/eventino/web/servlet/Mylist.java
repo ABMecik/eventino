@@ -81,6 +81,24 @@ public class Mylist extends HttpServlet {
 					request.setAttribute("numberOfEvent", numberOfEvent);
 				}
 				rs.close();
+				
+				
+				rs = stmt.executeQuery("SELECT event_id,event_title,event_publish_date,event_expire_date FROM event WHERE event.advertiser_id='"+userID+"'");
+				List<EventModel> events = new ArrayList<EventModel>();
+				while(rs.next()) {
+					EventModel eventModel = new EventModel();
+					eventModel.setEvent_id(rs.getInt("event_id"));
+					eventModel.setEvent_title("event_title");
+					eventModel.setEvent_publish_date(rs.getDate("event_publish_date"));
+					eventModel.setEvent_expire_date(rs.getDate("event_expire_date"));
+					
+					events.add(eventModel);
+					
+					request.setAttribute("myevents", events);
+				}
+				rs.close();
+				
+				
 
 			}
 			else if(userType.equals("Participant")) {
@@ -128,12 +146,14 @@ public class Mylist extends HttpServlet {
 			
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
+			request.setAttribute("error", "You dont have any activity");
 			RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
 					.getRequestDispatcher("/index.jsp");
 			reqDispatcher.forward(request, response);
 			e.printStackTrace();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
+			request.setAttribute("error", "You dont have any activity");
 			RequestDispatcher reqDispatcher = getServletConfig().getServletContext()
 					.getRequestDispatcher("/index.jsp");
 			reqDispatcher.forward(request, response);
