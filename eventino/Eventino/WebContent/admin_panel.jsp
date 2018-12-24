@@ -3,10 +3,8 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="com.eventino.web.model.EventModel"%>
-<%@page import="com.eventino.web.model.ParticipantModel"%>
-<%@page import="com.eventino.web.model.AdvertiserModel"%>
-<%@page import="com.eventino.web.model.EventModel"%>
 <%@page import="com.eventino.web.model.TicketModel"%>
+<%@page import="com.eventino.web.model.TicketRequestModel"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -57,59 +55,98 @@
 <body>
 
 	<div id="header"></div>
-	<div class="span7">   
-	<div class="widget stacked widget-table action-table">						
-				<div class="widget-content">
-				<form role="form" name="regForm" id="accept-form"
-					action="" method="POST">	
+	<div class="span7">
+		<div class="widget stacked widget-table action-table">
+			<div class="widget-content">
+				<form role="form" name="regForm" id="accept-form" action=""
+					method="POST">
 					<table class="table table-striped table-bordered">
 						<thead>
 							<tr>
-								<th>Event ID</th>
+								<th>Event Name</th>
 								<th>Student ID</th>
 								<th class="td-actions"></th>
 							</tr>
 						</thead>
 						<tbody>
+
+							<%
+								List<EventModel> rEvents = (ArrayList<EventModel>) request.getAttribute("ticketES");
+								List<TicketRequestModel> rTickets = (ArrayList<TicketRequestModel>) request.getAttribute("ticketRS");
+
+								if (!rEvents.isEmpty()) {
+									if (!rTickets.isEmpty()) {
+										for (int i = 0; i < rEvents.size(); i++) {
+							%>
 							<tr>
-								<td>1</td>
-								<td>2</td>
+								<td>
+									<%
+										out.print(rEvents.get(i).getEvent_title());
+									%>
+								</td>
+								<td>
+									<%
+										out.print(rTickets.get(i).getStudent_id());
+									%>
+								</td>
+								</td>
 								<td class="td-actions">
-									<input type="submit" value="Accept" class="btn btn-primary btn-block btn-lg">
-									<input type="submit" value="Decline" class="btn btn-primary btn-block btn-lg">
+									<form role="form" name="RequestAnswer" id="RequestAnswer"
+										method="POST" action="RequestAnswer">
+										<div class="form-group">
+											<fieldset>
+												<input name="ticketID" type="hidden"
+													value="${rTickets.get(i).getTicket_id()}">
+										</div>
+										<div class="form-group">
+											<input name="studentID" type="hidden"
+												value="${rTickets.get(i).getStudent_id()}">
+										</div>
+										<div class="form-group">
+											<input name="ans" type="hidden"
+												value="true">
+										</div>
+										<input type="submit" class="btn btn-primary btn-block btn-lg">
+										</fieldset>
+									</form>
+									
+									<form role="form" name="RequestAnswer" id="RequestAnswer"
+										method="POST" action="RequestAnswer">
+										<div class="form-group">
+											<fieldset>
+												<input name="ticketID" type="hidden"
+													value="${rTickets.get(i).getTicket_id()}">
+										</div>
+										<div class="form-group">
+											<input name="studentID" type="hidden"
+												value="${rTickets.get(i).getStudent_id()}">
+										</div>
+										<div class="form-group">
+											<input name="ans" type="hidden"
+												value="false">
+										</div>
+										<input type="submit" class="btn btn-primary btn-block btn-lg">
+										</fieldset>
+									</form>
 								</td>
 							</tr>
-							<tr>
-								<td>2</td>
-								<td>3</td>
-								<td class="td-actions">
-									<input type="submit" value="Accept" class="btn btn-primary btn-block btn-lg">
-									<input type="submit" value="Decline" class="btn btn-primary btn-block btn-lg">
-								</td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>4</td>
-								<td class="td-actions">
-									<input type="submit" value="Accept" class="btn btn-primary btn-block btn-lg">
-									<input type="submit" value="Decline" class="btn btn-primary btn-block btn-lg">
-								</td>
-							</tr>
-							<tr>
-								<td>4</td>
-								<td>5</td>
-								<td class="td-actions">
-									<input type="submit" value="Accept" class="btn btn-primary btn-block btn-lg">
-									<input type="submit" value="Decline" class="btn btn-primary btn-block btn-lg">
-								</td>
-							</tr>
-							</tbody>
-						</table>
-					</form>
-				</div> <!-- /widget-content -->
-			
-			</div> <!-- /widget -->
-            </div>				
+
+							<%
+								}
+									}
+								}
+							%>
+
+
+						</tbody>
+					</table>
+				</form>
+			</div>
+			<!-- /widget-content -->
+
+		</div>
+		<!-- /widget -->
+	</div>
 
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
