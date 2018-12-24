@@ -1,7 +1,7 @@
 body{
     height: 100vh;
     background-color: #343a40;
-	background: url("http://www.keypersonofinfluence.com/wp/wp-content/uploads/2016/01/events.jpg") no-repeat center center fixed; 
+	background: url("../img/background.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

@@ -32,6 +32,9 @@
 
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
+              		<li class="nav-link">
+                    	<a class="btn btn-primary btn-block btn-register" href="register.jsp">Administration</a>
+                    </li>
                 	<li class="nav-link">
                         <a class="btn btn-primary btn-block btn-login" href="/Eventino/Events">Events</a>
                     </li>
@@ -44,7 +47,7 @@
                     </li>
                     <li class="nav-link">
                         <a class="btn btn-primary btn-block btn-register" href="register.jsp">Register</a>
-                    </li>
+                    </li>                               
                     <%
 					} else {
 				%>
